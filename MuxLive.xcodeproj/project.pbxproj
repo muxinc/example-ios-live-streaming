@@ -13,6 +13,7 @@
 		0674AF771F29AEE300316CD3 /* MuxLive+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674AF751F29AEE300316CD3 /* MuxLive+Foundation.swift */; };
 		06AC206220A0FFFA00D37921 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06DE65AF1E18E3BE00C064DE /* Info.plist */; };
 		06AC206720A1006F00D37921 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06AC206620A1006F00D37921 /* LaunchScreen.storyboard */; };
+		06AE759B20BDD1C2004F0BCF /* MuxLive-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 06AE759A20BDD1C1004F0BCF /* MuxLive-Bridging-Header.h */; };
 		06DE65A41E18E3BE00C064DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE65A31E18E3BE00C064DE /* AppDelegate.swift */; };
 		06DE65A61E18E3BE00C064DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE65A51E18E3BE00C064DE /* ViewController.swift */; };
 		06DE65B71E19009000C064DE /* MuxLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE65B61E19009000C064DE /* MuxLive.swift */; };
@@ -26,6 +27,7 @@
 		066A170D1E6F7CE600514A95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Framework/Info.plist; sourceTree = "<group>"; };
 		0674AF751F29AEE300316CD3 /* MuxLive+Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MuxLive+Foundation.swift"; path = "Sources/MuxLive+Foundation.swift"; sourceTree = SOURCE_ROOT; };
 		06AC206620A1006F00D37921 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = App/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		06AE759A20BDD1C1004F0BCF /* MuxLive-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MuxLive-Bridging-Header.h"; path = "Sources/MuxLive-Bridging-Header.h"; sourceTree = "<group>"; };
 		06DE65A01E18E3BE00C064DE /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DE65A31E18E3BE00C064DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = App/AppDelegate.swift; sourceTree = "<group>"; };
 		06DE65A51E18E3BE00C064DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = App/ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				066A170C1E6F7CE600514A95 /* MuxLive.h */,
+				06AE759A20BDD1C1004F0BCF /* MuxLive-Bridging-Header.h */,
 				066A170D1E6F7CE600514A95 /* Info.plist */,
 			);
 			name = Framework;
@@ -159,6 +162,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06AE759B20BDD1C2004F0BCF /* MuxLive-Bridging-Header.h in Headers */,
 				066A170E1E6F7CE600514A95 /* MuxLive.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +368,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.patrickpiemonte.MuxLive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/MuxLive-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -387,6 +392,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.patrickpiemonte.MuxLive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/MuxLive-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
