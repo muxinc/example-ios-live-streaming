@@ -25,8 +25,41 @@
 
 import Foundation
 import Alamofire
+import LFLiveKit
 
 // MARK: - types
+
+public let MuxLiveApiProductionHostname = "api.mux.com"
+public let MuxLiveRtmpProductionUrl = "rtmp://live-staging.mux.com/mux/"
+
+/// Stream state
+public enum MuxLiveState: Int, CustomStringConvertible {
+    case ready
+    case pending
+    case started
+    case stopped
+    case failed
+    case refreshing
+    
+    public var description: String {
+        get {
+            switch self {
+            case .ready:
+                return "Ready"
+            case .pending:
+                return "Pending"
+            case .started:
+                return "Started"
+            case .stopped:
+                return "Stopped"
+            case .failed:
+                return "Failed"
+            case .refreshing:
+                return "Refreshing"
+            }
+        }
+    }
+}
 
 /// Error domain for all MuxLive errors.
 public let MuxLiveErrorDomain = "MuxLiveErrorDomain"
@@ -34,12 +67,41 @@ public let MuxLiveErrorDomain = "MuxLiveErrorDomain"
 /// Error types.
 public enum MuxLiveError: Error, CustomStringConvertible {
     case unknown
+    case streamingInfoFailure
+    case connectionFailure
+    case verificationFailure
+    case timeout
+    
+    public var code: Int {
+        get {
+            switch self {
+            case .unknown:
+                return 0
+            case .streamingInfoFailure:
+                return 202
+            case .connectionFailure:
+                return 203
+            case .verificationFailure:
+                return 204
+            case .timeout:
+                return 205
+            }
+        }
+    }
     
     public var description: String {
         get {
             switch self {
             case .unknown:
                 return "Unknown"
+            case .streamingInfoFailure:
+                return "Failure obtaining streaming information"
+            case .connectionFailure:
+                return "Connection failure"
+            case .verificationFailure:
+                return "Verification failure"
+            case .timeout:
+                return "Server timeout"
             }
         }
     }
@@ -47,15 +109,57 @@ public enum MuxLiveError: Error, CustomStringConvertible {
 
 // MARK: - MuxLive
 
+/// MuxLiveDelegate protocol, callback for receiving updates from MuxLive
+public protocol MuxLiveDelegate: NSObjectProtocol {
+    func muxLive(_ muxLive: MuxLive, didChangeState state: MuxLiveState)
+    func muxLive(_ muxLive: MuxLive, didFailWithError error: Error)
+}
+
 /// MuxLive, a live video streaming SDK for iOS
-public class MuxLive {
+public class MuxLive: NSObject {
 
     // MARK: - properties
     
-    /// Network reachability status of poly.googleapis.com
+    /// Delegate properties
+    public weak var muxLiveDelegate: MuxLiveDelegate?
+    
+    /// Audio configuration
+    public var audioConfiguration: MuxLiveAudioConfiguration = MuxLiveAudioConfiguration()
+    
+    /// Video configuration
+    public var videoConfiguration: MuxLiveVideoConfiguration = MuxLiveVideoConfiguration()
+
+    /// Network reachability status of api.mux.com
     public var networkReachable: Bool {
         get {
             return self._reachabilityStatus != .notReachable
+        }
+    }
+    
+    /// Preview of stream, provide a view for rendering
+    public var previewView: UIView? {
+        didSet {
+            if let previewView = self.previewView {
+                self._liveSession?.preView = previewView
+            }
+        }
+    }
+
+    /// Pause/resume local video capture
+    public var isRunning: Bool = false {
+        didSet {
+            self._liveSession?.running = self.isRunning
+        }
+    }
+    
+    /// Stream state
+    public var liveState: MuxLiveState {
+        get {
+            if let lfLiveState = self._liveSession?.state {
+                return MuxLiveState(rawValue: Int(lfLiveState.rawValue)) ?? .ready
+            } else {
+                return .ready
+            }
         }
     }
     
@@ -64,35 +168,113 @@ public class MuxLive {
     internal var _reachabilityManager: NetworkReachabilityManager?
     internal var _reachabilityStatus: NetworkReachabilityManager.NetworkReachabilityStatus = .unknown
     
+    internal var _configuration: URLSessionConfiguration?
+    
+    internal var _clientSession: SessionManager? // mux api (future)
+    internal var _liveSession: LFLiveSession?    // mux stream
+    
     // MARK: - singleton
     
-    /// singleton (if desired)
+    /// Singleton (if desired)
     public static let shared = MuxLive()
     
-    // MARK: - object lifecycle
+    // MARK: - Object lifecycle
     
     /// Initializer
-    public init() {
-        self._reachabilityManager = NetworkReachabilityManager(host: "api.mux.com")
-        self.setupClient()
+    public override init() {
+        self._reachabilityManager = NetworkReachabilityManager(host: MuxLiveApiProductionHostname)
+        super.init()
     }
     
 }
 
-// MARK: - setup
+// MARK: - internal setup
 
 extension MuxLive {
     
-    internal func setupClient() {
-  
-    }
-
-}
-
-extension MuxLive {
+    internal func setupLiveSession() {
+        let audioConfiguration = LFLiveAudioConfiguration.default()
+        //audioConfiguration?.numberOfChannels = self.audioConfiguration.channelsCount
+        //audioConfiguration?.audioBitrate = self.audioConfiguration.bitRate
+        //audioConfiguration?.sampleRate =
         
-    /// Reset client configuration
-    public func reset() {
+        let videoConfiguration = LFLiveVideoConfiguration.defaultConfiguration(for: .medium3)
+        //videoConfiguration?
+        //videoConfiguration?
+        //videoConfiguration?
+        
+        self._liveSession = LFLiveSession(audioConfiguration: audioConfiguration, videoConfiguration: videoConfiguration)!
+        if let liveSession = self._liveSession {
+            liveSession.delegate = self
+            liveSession.captureDevicePosition = .back
+            
+            if let previewView = self.previewView {
+                liveSession.preView = previewView
+            }
+        }
+    }
+
+}
+
+// MARK: - actions
+
+extension MuxLive {
+    
+    /// Start broadcast
+    public func start(withStreamKey streamKey: String) {
+        self.setupLiveSession()
+
+        // Check that the stream key is actually a key and not a full address
+        var streamUrlString = MuxLiveRtmpProductionUrl + streamKey
+        if streamKey.range(of: "rtmp://") != nil {
+            streamUrlString = streamKey
+        }
+        
+        let streamInfo = LFLiveStreamInfo()
+        streamInfo.url = streamUrlString
+        self._liveSession?.startLive(streamInfo)
     }
     
+    /// Stop broadcast
+    public func stop() {
+        self._liveSession?.stopLive()
+        self._liveSession?.delegate = nil
+        self._liveSession = nil
+    }
+    
+}
+
+// MARK: - LFLiveSessionDelegate
+
+extension MuxLive: LFLiveSessionDelegate {
+    
+    public func liveSession(_ session: LFLiveSession?, debugInfo: LFLiveDebug?) {
+        // print("🎬 debugInfo: \(debugInfo?.currentBandwidth)")
+    }
+    
+    public func liveSession(_ session: LFLiveSession?, liveStateDidChange state: LFLiveState) {
+        let state = MuxLiveState(rawValue: Int(state.rawValue)) ?? .ready
+        self.muxLiveDelegate?.muxLive(self, didChangeState: state)
+    }
+    
+    public func liveSession(_ session: LFLiveSession?, errorCode: LFLiveSocketErrorCode) {
+        var muxLiveError = MuxLiveError.unknown
+        switch errorCode {
+        case LFLiveSocketErrorCode.getStreamInfo:
+            muxLiveError = MuxLiveError.streamingInfoFailure
+            break
+        case LFLiveSocketErrorCode.connectSocket:
+            muxLiveError = MuxLiveError.streamingInfoFailure
+            break
+        case LFLiveSocketErrorCode.verification:
+            muxLiveError = MuxLiveError.verificationFailure
+            break
+        case LFLiveSocketErrorCode.reConnectTimeOut:
+            muxLiveError = MuxLiveError.timeout
+            break
+        default:
+            break
+        }
+        self.muxLiveDelegate?.muxLive(self, didFailWithError: muxLiveError)
+    }
 }

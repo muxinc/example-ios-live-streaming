@@ -24,12 +24,15 @@
 //
 
 import UIKit
+// import MuxLive
 
 public class ViewController: UIViewController {
 
     // MARK: - properties
     
     // MARK: - ivars
+    
+    internal var _broadcastViewController: MuxBroadcastViewController?
     
     
     // MARK: - object lifecycle
@@ -50,8 +53,13 @@ public class ViewController: UIViewController {
         self.view.backgroundColor = UIColor.black
         self.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
-
-
+        self._broadcastViewController = MuxBroadcastViewController()
+        if let viewController = self._broadcastViewController {
+            
+            self.addChildViewController(viewController)
+            self.view.addSubview(viewController.view)
+            viewController.didMove(toParentViewController: self)
+        }
     }
     
     public override func viewWillAppear(_ animated: Bool) {
@@ -59,13 +67,15 @@ public class ViewController: UIViewController {
         
 
     }
+
+}
+
+// MARK: - UIButton
+
+extension ViewController {
     
-    public override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-
-    }
-
+    
+    
 }
 
 // MARK: -  status bar

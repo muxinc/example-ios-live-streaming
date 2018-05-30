@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0625D02520BF1B06009B4A48 /* MuxLiveConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625D02420BF1B06009B4A48 /* MuxLiveConfiguration.swift */; };
+		0625D02620BF1B06009B4A48 /* MuxLiveConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625D02420BF1B06009B4A48 /* MuxLiveConfiguration.swift */; };
 		066A170E1E6F7CE600514A95 /* MuxLive.h in Headers */ = {isa = PBXBuildFile; fileRef = 066A170C1E6F7CE600514A95 /* MuxLive.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		066A17121E6F7CEA00514A95 /* MuxLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE65B61E19009000C064DE /* MuxLive.swift */; };
 		0674AF761F29AEE300316CD3 /* MuxLive+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674AF751F29AEE300316CD3 /* MuxLive+Foundation.swift */; };
@@ -24,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0625D02420BF1B06009B4A48 /* MuxLiveConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MuxLiveConfiguration.swift; path = Sources/MuxLiveConfiguration.swift; sourceTree = "<group>"; };
 		066A170A1E6F7CE600514A95 /* MuxLive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MuxLive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		066A170C1E6F7CE600514A95 /* MuxLive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MuxLive.h; path = Sources/MuxLive.h; sourceTree = "<group>"; };
 		066A170D1E6F7CE600514A95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Framework/Info.plist; sourceTree = "<group>"; };
@@ -90,8 +93,9 @@
 			isa = PBXGroup;
 			children = (
 				069CF83F20A27EB500D69DE9 /* Extensions */,
-				06DE65B61E19009000C064DE /* MuxLive.swift */,
 				06BF168220BDEE0900044640 /* MuxBroadcastViewController.swift */,
+				06DE65B61E19009000C064DE /* MuxLive.swift */,
+				0625D02420BF1B06009B4A48 /* MuxLiveConfiguration.swift */,
 			);
 			name = MuxLive;
 			sourceTree = "<group>";
@@ -344,6 +348,7 @@
 				0674AF771F29AEE300316CD3 /* MuxLive+Foundation.swift in Sources */,
 				066A17121E6F7CEA00514A95 /* MuxLive.swift in Sources */,
 				06BF168320BDEE0900044640 /* MuxBroadcastViewController.swift in Sources */,
+				0625D02620BF1B06009B4A48 /* MuxLiveConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06DE65A61E18E3BE00C064DE /* ViewController.swift in Sources */,
+				0625D02520BF1B06009B4A48 /* MuxLiveConfiguration.swift in Sources */,
 				06DE65A41E18E3BE00C064DE /* AppDelegate.swift in Sources */,
 				06DE65B71E19009000C064DE /* MuxLive.swift in Sources */,
 				06BF168420BDEE1000044640 /* MuxBroadcastViewController.swift in Sources */,
