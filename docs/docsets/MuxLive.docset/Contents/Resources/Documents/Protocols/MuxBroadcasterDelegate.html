@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>MuxLiveAudioConfiguration Class Reference</title>
+    <title>MuxBroadcasterDelegate Protocol Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/MuxLiveAudioConfiguration" class="dashAnchor"></a>
-    <a title="MuxLiveAudioConfiguration Class Reference"></a>
+    <a name="//apple_ref/swift/Protocol/MuxBroadcasterDelegate" class="dashAnchor"></a>
+    <a title="MuxBroadcasterDelegate Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">MuxLive Docs</a> (54% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">MuxLive Reference</a>
         <img id="carat" src="../img/carat.png" />
-        MuxLiveAudioConfiguration Class Reference
+        MuxBroadcasterDelegate Protocol Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -89,14 +89,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>MuxLiveAudioConfiguration</h1>
+            <h1>MuxBroadcasterDelegate</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MuxLiveAudioConfiguration</span> <span class="p">:</span> <span class="kt"><a href="../Classes.html#/s:7MuxLive0aB13ConfigurationC">MuxLiveConfiguration</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">MuxBroadcasterDelegate</span> <span class="p">:</span> <span class="kt">NSObjectProtocol</span></code></pre>
 
                 </div>
               </div>
-            <p>MuxLive audio configuration</p>
+            <p>MuxBroadcasterDelegate, callback delegation for the broadcaster</p>
 
           </section>
           <section class="section task-group-section">
@@ -105,9 +105,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7MuxLive0aB18AudioConfigurationC7bitRateSivp"></a>
-                    <a name="//apple_ref/swift/Property/bitRate" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7MuxLive0aB18AudioConfigurationC7bitRateSivp">bitRate</a>
+                    <a name="/s:7MuxLive0A19BroadcasterDelegateP03muxC0yAA0A23BroadcastViewControllerC_AA0aB5StateO09didChangeI0tF"></a>
+                    <a name="//apple_ref/swift/Method/muxBroadcaster(_:didChangeState:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7MuxLive0A19BroadcasterDelegateP03muxC0yAA0A23BroadcastViewControllerC_AA0aB5StateO09didChangeI0tF">muxBroadcaster(_:didChangeState:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -115,68 +115,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Audio bit rate, AV dictionary key AVEncoderBitRateKey</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">bitRate</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:7MuxLive0aB18AudioConfigurationC10sampleRateSdSgvp"></a>
-                    <a name="//apple_ref/swift/Property/sampleRate" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7MuxLive0aB18AudioConfigurationC10sampleRateSdSgvp">sampleRate</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Sample rate in hertz, AV dictionary key AVSampleRateKey</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">sampleRate</span><span class="p">:</span> <span class="kt">Float64</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:7MuxLive0aB18AudioConfigurationC13channelsCountSiSgvp"></a>
-                    <a name="//apple_ref/swift/Property/channelsCount" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7MuxLive0aB18AudioConfigurationC13channelsCountSiSgvp">channelsCount</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Number of channels, AV dictionary key AVNumberOfChannelsKey</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">channelsCount</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">muxBroadcaster</span><span class="p">(</span><span class="n">_</span> <span class="nv">muxBroadcaster</span><span class="p">:</span> <span class="kt"><a href="../Classes/MuxBroadcastViewController.html">MuxBroadcastViewController</a></span><span class="p">,</span> <span class="n">didChangeState</span> <span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Enums/MuxLiveState.html">MuxLiveState</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>

@@ -2,85 +2,78 @@
   "warnings": [
     {
       "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxBroadcastViewController.swift",
-      "line": null,
-      "symbol": "MuxBroadcastViewController",
-      "symbol_kind": "source.lang.swift.decl.extension",
+      "line": 33,
+      "symbol": "MuxBroadcasterDelegate.muxBroadcaster(_:didChangeState:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxBroadcastViewController.swift",
-      "line": null,
-      "symbol": "MuxBroadcastViewController",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxBroadcastViewController.swift",
-      "line": null,
-      "symbol": "MuxBroadcastViewController",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxBroadcastViewController.swift",
-      "line": 31,
-      "symbol": "MuxBroadcastViewController",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxBroadcastViewController.swift",
-      "line": 35,
-      "symbol": "MuxBroadcastViewController.streamKey",
+      "line": 41,
+      "symbol": "MuxBroadcastViewController.muxBroadcasterDelegate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxBroadcastViewController.swift",
-      "line": 48,
+      "line": 43,
+      "symbol": "MuxBroadcastViewController.liveState",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxBroadcastViewController.swift",
+      "line": 56,
       "symbol": "MuxBroadcastViewController.init(nibName:bundle:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxBroadcastViewController.swift",
-      "line": 52,
+      "line": 60,
       "symbol": "MuxBroadcastViewController.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxBroadcastViewController.swift",
-      "line": 58,
+      "line": 66,
       "symbol": "MuxBroadcastViewController.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxBroadcastViewController.swift",
-      "line": 78,
-      "symbol": "MuxBroadcastViewController.viewWillDisappear(_:)",
+      "line": 85,
+      "symbol": "MuxBroadcastViewController.viewWillAppear(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxBroadcastViewController.swift",
       "line": 91,
+      "symbol": "MuxBroadcastViewController.viewWillDisappear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxBroadcastViewController.swift",
+      "line": 104,
       "symbol": "MuxBroadcastViewController.preferredStatusBarStyle",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxBroadcastViewController.swift",
-      "line": 103,
-      "symbol": "MuxBroadcastViewController.start(withStreamKey:)",
+      "line": 116,
+      "symbol": "MuxBroadcastViewController.muxLive(_:didChangeState:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxBroadcastViewController.swift",
-      "line": 114,
-      "symbol": "MuxBroadcastViewController.launchAppSettings(withTitle:message:)",
+      "line": 120,
+      "symbol": "MuxBroadcastViewController.muxLive(_:didFailWithError:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -149,35 +142,70 @@
     },
     {
       "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxLive.swift",
-      "line": 87,
+      "line": 72,
+      "symbol": "MuxLiveError.streamingInfoFailure",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxLive.swift",
+      "line": 73,
+      "symbol": "MuxLiveError.connectionFailure",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxLive.swift",
+      "line": 74,
+      "symbol": "MuxLiveError.verificationFailure",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxLive.swift",
+      "line": 75,
+      "symbol": "MuxLiveError.timeout",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxLive.swift",
+      "line": 77,
+      "symbol": "MuxLiveError.code",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxLive.swift",
+      "line": 116,
       "symbol": "MuxLiveDelegate.muxLive(_:didChangeState:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxLive.swift",
-      "line": 88,
+      "line": 117,
       "symbol": "MuxLiveDelegate.muxLive(_:didFailWithError:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxLive.swift",
-      "line": 218,
+      "line": 258,
       "symbol": "MuxLive.liveSession(_:debugInfo:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxLive.swift",
-      "line": 222,
+      "line": 262,
       "symbol": "MuxLive.liveSession(_:liveStateDidChange:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxLive.swift",
-      "line": 227,
+      "line": 267,
       "symbol": "MuxLive.liveSession(_:errorCode:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
