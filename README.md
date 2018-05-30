@@ -1,12 +1,34 @@
 # example-ios-live-streaming
 
-An example app for live streaming from an iOS device using the Mux live streaming service, written in [Swift](https://developer.apple.com/swift/).
+An example app for live streaming from an iOS device using the [Mux](http://mux.com) live streaming service, written in [Swift](https://developer.apple.com/swift/).
 
 [![Swift Version](https://img.shields.io/badge/language-swift%204.0-brightgreen.svg)](https://developer.apple.com/swift) [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/muxinc/example-ios-live-streaming/blob/master/LICENSE)
 
 ## Quick Start
 
+You can follow along with the code from the sample project's 'ViewController.swift' or install all the source files in the following ways:
 
+```ruby
+
+# CocoaPods (not current supported! maybe? we have to figure that out.)
+
+pod "MuxLive", "~> 0.0.1"
+
+# Carthage
+
+github "muxinc/example-ios-live-streaming" ~> 0.0.1
+
+# Swift PM
+
+let package = Package(
+    dependencies: [
+        .Package(url: "https://github.com/muxinc/example-ios-live-streaming", majorVersion: 0)
+    ]
+)
+
+```
+
+Alternatively, copy the [source files](https://github.com/muxinc/example-ios-live-streaming/tree/master/Sources) into your Xcode project.
 
 ## Documentation
 
