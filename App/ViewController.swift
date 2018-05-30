@@ -24,7 +24,7 @@
 //
 
 import UIKit
-// import MuxLive
+//import MuxLive
 
 public class ViewController: UIViewController {
 
@@ -55,6 +55,7 @@ public class ViewController: UIViewController {
 
         self._broadcastViewController = MuxBroadcastViewController()
         if let viewController = self._broadcastViewController {
+            viewController.muxBroadcasterDelegate = self
             
             self.addChildViewController(viewController)
             self.view.addSubview(viewController.view)
@@ -70,14 +71,6 @@ public class ViewController: UIViewController {
 
 }
 
-// MARK: - UIButton
-
-extension ViewController {
-    
-    
-    
-}
-
 // MARK: -  status bar
 
 extension ViewController {
@@ -86,6 +79,21 @@ extension ViewController {
         get {
             return .lightContent
         }
+    }
+    
+}
+
+// MARK: - UIButton
+
+extension ViewController {
+}
+
+// MARK: - MuxBroadcasterDelegate
+
+extension ViewController: MuxBroadcasterDelegate {
+    
+    public func muxBroadcaster(_ muxBroadcaster: MuxBroadcastViewController, didChangeState state: MuxLiveState) {
+        
     }
 
 }

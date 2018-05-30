@@ -19,5 +19,6 @@ target 'MuxLive' do
 end
 
 target 'SampleApp' do
+  pod 'RPCircularProgress', '~> 0.4'
   shared_pods
 end

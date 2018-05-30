@@ -28,10 +28,17 @@ import Foundation
 import AVFoundation
 import NextLevel
 
+/// MuxBroadcasterDelegate, callback delegation for the broadcaster
+public protocol MuxBroadcasterDelegate: NSObjectProtocol {
+    func muxBroadcaster(_ muxBroadcaster: MuxBroadcastViewController, didChangeState state: MuxLiveState)
+}
+
 /// MuxBroadcastViewController, provides a simple user interface and permissions handling for MuxLive streaming
 public class MuxBroadcastViewController: UIViewController {
     
     // MARK: - properties
+    
+    public weak var muxBroadcasterDelegate: MuxBroadcasterDelegate?
     
     public var liveState: MuxLiveState {
         get {
@@ -104,7 +111,7 @@ extension MuxBroadcastViewController {
 extension MuxBroadcastViewController: MuxLiveDelegate {
     
     public func muxLive(_ muxLive: MuxLive, didChangeState state: MuxLiveState) {
-        
+        self.muxBroadcasterDelegate?.muxBroadcaster(self, didChangeState: state)
     }
     
     public func muxLive(_ muxLive: MuxLive, didFailWithError error: Error) {
