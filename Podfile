@@ -9,7 +9,9 @@ swift_version = '4.0'
 use_frameworks!
 
 def shared_pods
-  pod 'Alamofire', '4.7.2'
+  pod 'Alamofire', '~> 4.7'
+  pod 'LFLiveKit', '~> 2.6'
+  pod 'NextLevel', '~> 0.9'
 end
 
 target 'MuxLive' do

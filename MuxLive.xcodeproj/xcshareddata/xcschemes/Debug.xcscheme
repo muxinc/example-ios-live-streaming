@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "06DE659F1E18E3BE00C064DE"
-               BuildableName = "Bridge_iOS.app"
-               BlueprintName = "Bridge_iOS"
-               ReferencedContainer = "container:Bridge.xcodeproj">
+               BuildableName = "SampleApp.app"
+               BlueprintName = "SampleApp"
+               ReferencedContainer = "container:MuxLive.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -74,9 +74,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "06DE659F1E18E3BE00C064DE"
-            BuildableName = "Bridge_iOS.app"
-            BlueprintName = "Bridge_iOS"
-            ReferencedContainer = "container:Bridge.xcodeproj">
+            BuildableName = "SampleApp.app"
+            BlueprintName = "SampleApp"
+            ReferencedContainer = "container:MuxLive.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

@@ -10,5 +10,7 @@ Pod::Spec.new do |s|
   s.source_files = 'Sources/*.swift'
   s.requires_arc = true
   s.swift_version = '4.0'
-  s.dependency 'Alamofire', '4.7.2'
+  s.dependency 'Alamofire', '~> 4.7'
+  s.dependency 'LFLiveKit', '~> 2.6'
+  s.dependency 'NextLevel', '~> 9.3'
 end

@@ -11,9 +11,11 @@
 		066A17121E6F7CEA00514A95 /* MuxLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE65B61E19009000C064DE /* MuxLive.swift */; };
 		0674AF761F29AEE300316CD3 /* MuxLive+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674AF751F29AEE300316CD3 /* MuxLive+Foundation.swift */; };
 		0674AF771F29AEE300316CD3 /* MuxLive+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674AF751F29AEE300316CD3 /* MuxLive+Foundation.swift */; };
-		06AC206220A0FFFA00D37921 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06DE65AF1E18E3BE00C064DE /* Info.plist */; };
 		06AC206720A1006F00D37921 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06AC206620A1006F00D37921 /* LaunchScreen.storyboard */; };
 		06AE759B20BDD1C2004F0BCF /* MuxLive-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 06AE759A20BDD1C1004F0BCF /* MuxLive-Bridging-Header.h */; };
+		06BF168320BDEE0900044640 /* MuxBroadcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BF168220BDEE0900044640 /* MuxBroadcastViewController.swift */; };
+		06BF168420BDEE1000044640 /* MuxBroadcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BF168220BDEE0900044640 /* MuxBroadcastViewController.swift */; };
+		06BF168820BE1F7700044640 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06BF168720BE1F7700044640 /* Images.xcassets */; };
 		06DE65A41E18E3BE00C064DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE65A31E18E3BE00C064DE /* AppDelegate.swift */; };
 		06DE65A61E18E3BE00C064DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE65A51E18E3BE00C064DE /* ViewController.swift */; };
 		06DE65B71E19009000C064DE /* MuxLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE65B61E19009000C064DE /* MuxLive.swift */; };
@@ -28,6 +30,8 @@
 		0674AF751F29AEE300316CD3 /* MuxLive+Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MuxLive+Foundation.swift"; path = "Sources/MuxLive+Foundation.swift"; sourceTree = SOURCE_ROOT; };
 		06AC206620A1006F00D37921 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = App/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		06AE759A20BDD1C1004F0BCF /* MuxLive-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MuxLive-Bridging-Header.h"; path = "Sources/MuxLive-Bridging-Header.h"; sourceTree = "<group>"; };
+		06BF168220BDEE0900044640 /* MuxBroadcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MuxBroadcastViewController.swift; path = Sources/MuxBroadcastViewController.swift; sourceTree = "<group>"; };
+		06BF168720BE1F7700044640 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		06DE65A01E18E3BE00C064DE /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DE65A31E18E3BE00C064DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = App/AppDelegate.swift; sourceTree = "<group>"; };
 		06DE65A51E18E3BE00C064DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = App/ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 			children = (
 				069CF83F20A27EB500D69DE9 /* Extensions */,
 				06DE65B61E19009000C064DE /* MuxLive.swift */,
+				06BF168220BDEE0900044640 /* MuxBroadcastViewController.swift */,
 			);
 			name = MuxLive;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 				06FA57781E1A2AC6001E66A5 /* Base.xcconfig */,
 				06FA57791E1A2AC6001E66A5 /* Debug.xcconfig */,
 				06FA577A1E1A2AC6001E66A5 /* Release.xcconfig */,
+				06BF168720BE1F7700044640 /* Images.xcassets */,
 				06AC206620A1006F00D37921 /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
@@ -216,7 +222,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0930;
-				ORGANIZATIONNAME = "Megasaki, Inc.";
+				ORGANIZATIONNAME = "Mux, Inc.";
 				TargetAttributes = {
 					066A17091E6F7CE600514A95 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -262,7 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06AC206220A0FFFA00D37921 /* Info.plist in Resources */,
+				06BF168820BE1F7700044640 /* Images.xcassets in Resources */,
 				06AC206720A1006F00D37921 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,10 +320,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SampleApp/Pods-SampleApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/LFLiveKit/LFLiveKit.framework",
+				"${BUILT_PRODUCTS_DIR}/NextLevel/NextLevel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LFLiveKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextLevel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -333,6 +343,7 @@
 			files = (
 				0674AF771F29AEE300316CD3 /* MuxLive+Foundation.swift in Sources */,
 				066A17121E6F7CEA00514A95 /* MuxLive.swift in Sources */,
+				06BF168320BDEE0900044640 /* MuxBroadcastViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +354,7 @@
 				06DE65A61E18E3BE00C064DE /* ViewController.swift in Sources */,
 				06DE65A41E18E3BE00C064DE /* AppDelegate.swift in Sources */,
 				06DE65B71E19009000C064DE /* MuxLive.swift in Sources */,
+				06BF168420BDEE1000044640 /* MuxBroadcastViewController.swift in Sources */,
 				0674AF761F29AEE300316CD3 /* MuxLive+Foundation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,12 +524,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6F5D8F317DF3DA494E63BD1D /* Pods-SampleApp.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = WPFGSL5BLN;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.patrickpiemonte.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -525,12 +538,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C4B5F9CF558369D5590A8C92 /* Pods-SampleApp.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = WPFGSL5BLN;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.patrickpiemonte.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
