@@ -94,6 +94,11 @@ public class ViewController: UIViewController {
 
     }
 
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self._streamStatusProgress?.enableIndeterminate(false, completion: nil)
+    }
+    
 }
 
 // MARK: -  status bar
@@ -119,6 +124,7 @@ extension ViewController: MuxBroadcasterDelegate {
     
     public func muxBroadcaster(_ muxBroadcaster: MuxBroadcastViewController, didChangeState state: MuxLiveState) {
         print("🎬 MuxLive didChangeState, \(state.description)")
+        
         switch state {
         case .ready:
             // solid off-black ring
