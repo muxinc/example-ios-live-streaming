@@ -6,6 +6,8 @@ An example app for live streaming from an iOS device using the Mux live streamin
 
 ## Quick Start
 
+
+
 ## Documentation
 
 You can find [the docs here](https://muxinc.github.io/example-ios-live-streaming). Documentation is generated with [jazzy](https://github.com/realm/jazzy) and hosted on [GitHub-Pages](https://pages.github.com).
@@ -13,10 +15,12 @@ You can find [the docs here](https://muxinc.github.io/example-ios-live-streaming
 ## Resources
 
 * [Mux](http://mux.com)
+* [Mux Live Streaming Documentation](https://docs.mux.com/v1/docs/live-streaming)
 * [Demuxed](http://demuxed.com)
 * [Swift Evolution](https://github.com/apple/swift-evolution)
 * [NextLevel](http://nextlevel.engineering/) Media Capture Library
-* [ijkplayer](https://github.com/Bilibili/ijkplayer) Streaming video player based on ffmpeg n3.4
+* [Streambox](http://streambox.fr/mse/hls.js-0.8.9/demo/) Web-based HLS video player
+* [ijkplayer](https://github.com/Bilibili/ijkplayer) Streaming video player for RTMP
 * [LFLiveKit](https://github.com/LaiFengiOS/LFLiveKit) RTMP Streaming SDK
 
 ## License
