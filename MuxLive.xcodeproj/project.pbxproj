@@ -326,6 +326,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/LFLiveKit/LFLiveKit.framework",
 				"${BUILT_PRODUCTS_DIR}/NextLevel/NextLevel.framework",
+				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
 				"${BUILT_PRODUCTS_DIR}/RPCircularProgress/RPCircularProgress.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -333,6 +334,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LFLiveKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextLevel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RPCircularProgress.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

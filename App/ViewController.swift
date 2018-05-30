@@ -24,6 +24,8 @@
 //
 
 import UIKit
+import RPCircularProgress
+import Hue
 //import MuxLive
 
 public class ViewController: UIViewController {
@@ -33,6 +35,7 @@ public class ViewController: UIViewController {
     // MARK: - ivars
     
     internal var _broadcastViewController: MuxBroadcastViewController?
+    internal var _streamStatusProgress: RPCircularProgress?
     
     
     // MARK: - object lifecycle
@@ -53,6 +56,13 @@ public class ViewController: UIViewController {
         self.view.backgroundColor = UIColor.black
         self.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
+        var safeAreaTop: CGFloat = UIApplication.shared.statusBarFrame.size.height
+        if let window = UIApplication.shared.keyWindow {
+            if window.safeAreaInsets.top > 0 {
+                safeAreaTop = window.safeAreaInsets.top
+            }
+        }
+        
         self._broadcastViewController = MuxBroadcastViewController()
         if let viewController = self._broadcastViewController {
             viewController.muxBroadcasterDelegate = self
@@ -61,6 +71,21 @@ public class ViewController: UIViewController {
             self.view.addSubview(viewController.view)
             viewController.didMove(toParentViewController: self)
         }
+        
+        let margin: CGFloat = 15.0
+        self._streamStatusProgress = RPCircularProgress()
+        if let streamStatusProgress = self._streamStatusProgress {
+            streamStatusProgress.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+            streamStatusProgress.roundedCorners = true
+            streamStatusProgress.thicknessRatio = 0.4
+            streamStatusProgress.trackTintColor = UIColor(hex: "#221e1f")
+            streamStatusProgress.progressTintColor = UIColor(hex: "#fb3064")
+            streamStatusProgress.isUserInteractionEnabled = false
+            streamStatusProgress.center = CGPoint(x: self.view.bounds.width - (streamStatusProgress.frame.height * 0.5) - margin,
+                                                  y: (streamStatusProgress.frame.width * 0.5) + margin + safeAreaTop)
+            self.view.addSubview(streamStatusProgress)
+        }
+
     }
     
     public override func viewWillAppear(_ animated: Bool) {
@@ -93,7 +118,45 @@ extension ViewController {
 extension ViewController: MuxBroadcasterDelegate {
     
     public func muxBroadcaster(_ muxBroadcaster: MuxBroadcastViewController, didChangeState state: MuxLiveState) {
-        
+        print("🎬 MuxLive didChangeState, \(state.description)")
+        switch state {
+        case .ready:
+            // solid off-black ring
+            self._streamStatusProgress?.trackTintColor = UIColor(hex: "#221e1f")
+            self._streamStatusProgress?.updateProgress(0, animated: true, initialDelay: 0, completion: nil)
+            self._streamStatusProgress?.enableIndeterminate(false, completion: nil)
+            break
+        case .pending:
+            // spinning red ring
+            self._streamStatusProgress?.trackTintColor = UIColor(hex: "#221e1f")
+            self._streamStatusProgress?.updateProgress(0.3, animated: true, initialDelay: 0, completion: nil)
+            self._streamStatusProgress?.enableIndeterminate(true, completion: nil)
+            break
+        case .started:
+            // solid red ring
+            self._streamStatusProgress?.trackTintColor = UIColor(hex: "#221e1f")
+            self._streamStatusProgress?.updateProgress(1.0, animated: true, initialDelay: 0, completion: nil)
+            self._streamStatusProgress?.enableIndeterminate(false, completion: nil)
+            break
+        case .stopped:
+            // solid off-black ring
+            self._streamStatusProgress?.trackTintColor = UIColor(hex: "#221e1f")
+            self._streamStatusProgress?.updateProgress(0, animated: true, initialDelay: 0, completion: nil)
+            self._streamStatusProgress?.enableIndeterminate(false, completion: nil)
+            break
+        case .failed:
+            // solid yellow ring
+            self._streamStatusProgress?.trackTintColor = UIColor(hex: "#f7df48")
+            self._streamStatusProgress?.updateProgress(1.0, animated: true, initialDelay: 0, completion: nil)
+            self._streamStatusProgress?.enableIndeterminate(false, completion: nil)
+            break
+        case .refreshing:
+            // spinning green ring
+            self._streamStatusProgress?.trackTintColor = UIColor(hex: "#30da69")
+            self._streamStatusProgress?.updateProgress(0.3, animated: true, initialDelay: 0, completion: nil)
+            self._streamStatusProgress?.enableIndeterminate(true, completion: nil)
+            break
+        }
     }
 
 }

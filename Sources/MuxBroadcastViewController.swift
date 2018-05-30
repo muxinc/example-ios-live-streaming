@@ -69,12 +69,15 @@ public class MuxBroadcastViewController: UIViewController {
         self.view.backgroundColor = UIColor.black
         self.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
+        // setup MuxLive and preview
         self._previewView = UIView(frame: self.view.bounds)
         if let previewView = self._previewView {
+            self._muxLive.muxLiveDelegate = self
             self._muxLive.previewView = previewView
             self.view.addSubview(previewView)
         }
         
+        // check permissions
         self.checkAndRequestCameraPermission()
         self.checkAndRequestMicrophonePermission()
     }

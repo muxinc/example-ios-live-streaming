@@ -20,5 +20,6 @@ end
 
 target 'SampleApp' do
   pod 'RPCircularProgress', '~> 0.4'
+  pod 'Hue', '~> 3.0'
   shared_pods
 end
