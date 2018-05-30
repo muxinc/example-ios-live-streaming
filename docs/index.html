@@ -91,10 +91,32 @@
             
             <h1 id='example-ios-live-streaming' class='heading'>example-ios-live-streaming</h1>
 
-<p>An example app for live streaming from an iOS device using the Mux live streaming service, written in <a href="https://developer.apple.com/swift/">Swift</a>.</p>
+<p>An example app for live streaming from an iOS device using the <a href="http://mux.com">Mux</a> live streaming service, written in <a href="https://developer.apple.com/swift/">Swift</a>.</p>
 
 <p><a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/language-swift%204.0-brightgreen.svg" alt="Swift Version"></a> <a href="https://github.com/muxinc/example-ios-live-streaming/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-lightgrey.svg" alt="GitHub license"></a></p>
 <h2 id='quick-start' class='heading'>Quick Start</h2>
+
+<p>You can follow along with the code from the sample project&rsquo;s &lsquo;ViewController.swift&rsquo; or install all the source files in the following ways:</p>
+<pre class="highlight ruby"><code>
+<span class="c1"># CocoaPods (not current supported! maybe? we have to figure that out.)</span>
+
+<span class="n">pod</span> <span class="s2">"MuxLive"</span><span class="p">,</span> <span class="s2">"~&gt; 0.0.1"</span>
+
+<span class="c1"># Carthage</span>
+
+<span class="n">github</span> <span class="s2">"muxinc/example-ios-live-streaming"</span> <span class="o">~&gt;</span> <span class="mf">0.0</span><span class="o">.</span><span class="mi">1</span>
+
+<span class="c1"># Swift PM</span>
+
+<span class="n">let</span> <span class="n">package</span> <span class="o">=</span> <span class="no">Package</span><span class="p">(</span>
+    <span class="ss">dependencies: </span><span class="p">[</span>
+        <span class="o">.</span><span class="no">Package</span><span class="p">(</span><span class="ss">url: </span><span class="s2">"https://github.com/muxinc/example-ios-live-streaming"</span><span class="p">,</span> <span class="ss">majorVersion: </span><span class="mi">0</span><span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+</code></pre>
+
+<p>Alternatively, copy the <a href="https://github.com/muxinc/example-ios-live-streaming/tree/master/Sources">source files</a> into your Xcode project.</p>
 <h2 id='documentation' class='heading'>Documentation</h2>
 
 <p>You can find <a href="https://muxinc.github.io/example-ios-live-streaming">the docs here</a>. Documentation is generated with <a href="https://github.com/realm/jazzy">jazzy</a> and hosted on <a href="https://pages.github.com">GitHub-Pages</a>.</p>
