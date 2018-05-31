@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0625D02520BF1B06009B4A48 /* MuxLiveConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625D02420BF1B06009B4A48 /* MuxLiveConfiguration.swift */; };
 		0625D02620BF1B06009B4A48 /* MuxLiveConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625D02420BF1B06009B4A48 /* MuxLiveConfiguration.swift */; };
+		064DCF5120C054DD000960C5 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064DCF5020C054DC000960C5 /* ConnectViewController.swift */; };
 		066A170E1E6F7CE600514A95 /* MuxLive.h in Headers */ = {isa = PBXBuildFile; fileRef = 066A170C1E6F7CE600514A95 /* MuxLive.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		066A17121E6F7CEA00514A95 /* MuxLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE65B61E19009000C064DE /* MuxLive.swift */; };
 		06AC206720A1006F00D37921 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06AC206620A1006F00D37921 /* LaunchScreen.storyboard */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		0625D02420BF1B06009B4A48 /* MuxLiveConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MuxLiveConfiguration.swift; path = Sources/MuxLiveConfiguration.swift; sourceTree = "<group>"; };
+		064DCF5020C054DC000960C5 /* ConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectViewController.swift; path = App/ConnectViewController.swift; sourceTree = "<group>"; };
 		066A170A1E6F7CE600514A95 /* MuxLive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MuxLive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		066A170C1E6F7CE600514A95 /* MuxLive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MuxLive.h; path = Sources/MuxLive.h; sourceTree = "<group>"; };
 		066A170D1E6F7CE600514A95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Framework/Info.plist; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				06DE65A31E18E3BE00C064DE /* AppDelegate.swift */,
+				064DCF5020C054DC000960C5 /* ConnectViewController.swift */,
 				06DE65A51E18E3BE00C064DE /* ViewController.swift */,
 				06DE65AF1E18E3BE00C064DE /* Info.plist */,
 			);
@@ -347,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				064DCF5120C054DD000960C5 /* ConnectViewController.swift in Sources */,
 				06DE65A61E18E3BE00C064DE /* ViewController.swift in Sources */,
 				0625D02520BF1B06009B4A48 /* MuxLiveConfiguration.swift in Sources */,
 				06DE65A41E18E3BE00C064DE /* AppDelegate.swift in Sources */,

@@ -35,9 +35,10 @@ public class ViewController: UIViewController {
     // MARK: - ivars
     
     internal var _broadcastViewController: MuxBroadcastViewController?
+    
+    internal var _stopButton: UIButton?
     internal var _streamStatusProgress: RPCircularProgress?
-    
-    
+        
     // MARK: - object lifecycle
     
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -55,14 +56,8 @@ public class ViewController: UIViewController {
 
         self.view.backgroundColor = UIColor.black
         self.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-
-        var safeAreaTop: CGFloat = UIApplication.shared.statusBarFrame.size.height
-        if let window = UIApplication.shared.keyWindow {
-            if window.safeAreaInsets.top > 0 {
-                safeAreaTop = window.safeAreaInsets.top
-            }
-        }
         
+        // setup a broadcast view controller
         self._broadcastViewController = MuxBroadcastViewController()
         if let viewController = self._broadcastViewController {
             viewController.muxBroadcasterDelegate = self
@@ -72,7 +67,14 @@ public class ViewController: UIViewController {
             viewController.didMove(toParentViewController: self)
         }
         
+        var safeAreaTop: CGFloat = UIApplication.shared.statusBarFrame.size.height
+        if let window = UIApplication.shared.keyWindow {
+            if window.safeAreaInsets.top > 0 {
+                safeAreaTop = window.safeAreaInsets.top
+            }
+        }
         let margin: CGFloat = 15.0
+        
         self._streamStatusProgress = RPCircularProgress()
         if let streamStatusProgress = self._streamStatusProgress {
             streamStatusProgress.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
@@ -85,15 +87,19 @@ public class ViewController: UIViewController {
                                                   y: (streamStatusProgress.frame.width * 0.5) + margin + safeAreaTop)
             self.view.addSubview(streamStatusProgress)
         }
-
+        
+        self._stopButton = UIButton(type: .custom)
+        if let stopButton = self._stopButton,
+           let streamStatusProgress = self._streamStatusProgress {
+            stopButton.setImage(UIImage(named: "close_button"), for: .normal)
+            stopButton.sizeToFit()
+            stopButton.addTarget(self, action: #selector(handleStopButton(_:)), for: .touchUpInside)
+            stopButton.center = CGPoint(x: (stopButton.frame.height * 0.5) + margin,
+                                        y: (stopButton.frame.width * 0.5) + margin + safeAreaTop)
+            self.view.addSubview(stopButton)
+        }
     }
     
-    public override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-
-    }
-
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self._streamStatusProgress?.enableIndeterminate(false, completion: nil)
@@ -113,9 +119,29 @@ extension ViewController {
     
 }
 
+// MARK: - internal
+
+extension ViewController {
+    
+    public func presentConnectModal(animated: Bool = true) {
+        let connectViewController = ConnectViewController()
+        connectViewController.connectDelegate = self
+        connectViewController.modalPresentationStyle = .currentContext
+        connectViewController.modalTransitionStyle = .coverVertical
+        UIApplication.presentViewControllerFromRoot(viewController: connectViewController, animated: animated)
+    }
+    
+}
+
 // MARK: - UIButton
 
 extension ViewController {
+    
+    @objc public func handleStopButton(_ button: UIButton) {
+        self._broadcastViewController?.stop()
+        self.presentConnectModal()
+    }
+    
 }
 
 // MARK: - MuxBroadcasterDelegate
@@ -165,4 +191,15 @@ extension ViewController: MuxBroadcasterDelegate {
         }
     }
 
+}
+
+// MARK: - ConnectDelegate
+
+extension ViewController: ConnectDelegate {
+    
+    public func connectViewController(_ viewController: ConnectViewController, didConnectWithStreamKey streamKey: String) {
+        // start a broadcast stream
+        self._broadcastViewController?.start(withStreamKey: streamKey)
+    }
+    
 }

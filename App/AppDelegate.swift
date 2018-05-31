@@ -39,6 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let viewController = ViewController()
         self.window?.rootViewController = viewController
         self.window?.makeKeyAndVisible()
+        
+        viewController.presentConnectModal(animated: false)
+        
         return true
     }
     
@@ -56,4 +59,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
     }
+}
+
+extension UIApplication {
+    
+    public class func presentViewControllerFromRoot(viewController: UIViewController, animated: Bool = true) {
+        if let window = UIApplication.shared.delegate?.window {
+            window?.rootViewController?.dismiss(animated: true, completion: nil)
+        }
+        
+        var rootViewController = UIApplication.shared.keyWindow?.rootViewController
+        if let navigationController = rootViewController as? UINavigationController {
+            rootViewController = navigationController.viewControllers.first
+        }
+        if let tabBarController = rootViewController as? UITabBarController {
+            rootViewController = tabBarController.selectedViewController
+        }
+        rootViewController?.present(viewController, animated: animated)
+    }
+    
 }
