@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>MuxLiveError Enumeration Reference</title>
+    <title>MuxLiveVideoConfiguration Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/MuxLiveError" class="dashAnchor"></a>
-    <a title="MuxLiveError Enumeration Reference"></a>
+    <a name="//apple_ref/swift/Class/MuxLiveVideoConfiguration" class="dashAnchor"></a>
+    <a title="MuxLiveVideoConfiguration Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">MuxLive Docs</a> (60% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">MuxLive Reference</a>
         <img id="carat" src="../img/carat.png" />
-        MuxLiveError Enumeration Reference
+        MuxLiveVideoConfiguration Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -89,14 +89,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>MuxLiveError</h1>
+            <h1>MuxLiveVideoConfiguration</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">MuxLiveError</span> <span class="p">:</span> <span class="kt">Error</span><span class="p">,</span> <span class="kt">CustomStringConvertible</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MuxLiveVideoConfiguration</span> <span class="p">:</span> <span class="kt"><a href="../Classes.html#/s:7MuxLive0aB13ConfigurationC">MuxLiveConfiguration</a></span></code></pre>
 
                 </div>
               </div>
-            <p>Error types.</p>
+            <p>MuxLive video configuration</p>
 
           </section>
           <section class="section task-group-section">
@@ -105,9 +105,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7MuxLive0aB5ErrorO7unknownA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/unknown" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7MuxLive0aB5ErrorO7unknownA2CmF">unknown</a>
+                    <a name="/s:7MuxLive0aB18VideoConfigurationC9frameRates5Int32Vvp"></a>
+                    <a name="//apple_ref/swift/Property/frameRate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7MuxLive0aB18VideoConfigurationC9frameRates5Int32Vvp">frameRate</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -115,14 +115,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Video frame rate</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">unknown</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">frameRate</span><span class="p">:</span> <span class="kt">CMTimeScale</span></code></pre>
 
                         </div>
                       </div>
@@ -132,9 +132,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7MuxLive0aB5ErrorO20streamingInfoFailureA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/streamingInfoFailure" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7MuxLive0aB5ErrorO20streamingInfoFailureA2CmF">streamingInfoFailure</a>
+                    <a name="/s:7MuxLive0aB18VideoConfigurationC12maxFrameRates5Int32Vvp"></a>
+                    <a name="//apple_ref/swift/Property/maxFrameRate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7MuxLive0aB18VideoConfigurationC12maxFrameRates5Int32Vvp">maxFrameRate</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -142,14 +142,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Max video frame rate</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">streamingInfoFailure</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">maxFrameRate</span><span class="p">:</span> <span class="kt">CMTimeScale</span></code></pre>
 
                         </div>
                       </div>
@@ -159,9 +159,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7MuxLive0aB5ErrorO17connectionFailureA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/connectionFailure" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7MuxLive0aB5ErrorO17connectionFailureA2CmF">connectionFailure</a>
+                    <a name="/s:7MuxLive0aB18VideoConfigurationC12minFrameRates5Int32Vvp"></a>
+                    <a name="//apple_ref/swift/Property/minFrameRate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7MuxLive0aB18VideoConfigurationC12minFrameRates5Int32Vvp">minFrameRate</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -169,14 +169,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Min video frame rate</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">connectionFailure</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">minFrameRate</span><span class="p">:</span> <span class="kt">CMTimeScale</span></code></pre>
 
                         </div>
                       </div>
@@ -186,9 +186,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7MuxLive0aB5ErrorO19verificationFailureA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/verificationFailure" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7MuxLive0aB5ErrorO19verificationFailureA2CmF">verificationFailure</a>
+                    <a name="/s:7MuxLive0aB18VideoConfigurationC7bitRateSivp"></a>
+                    <a name="//apple_ref/swift/Property/bitRate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7MuxLive0aB18VideoConfigurationC7bitRateSivp">bitRate</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -196,14 +196,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Video bit rate (kbps)</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">verificationFailure</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">bitRate</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -213,9 +213,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7MuxLive0aB5ErrorO7timeoutA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/timeout" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7MuxLive0aB5ErrorO7timeoutA2CmF">timeout</a>
+                    <a name="/s:7MuxLive0aB18VideoConfigurationC10maxBitRateSivp"></a>
+                    <a name="//apple_ref/swift/Property/maxBitRate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7MuxLive0aB18VideoConfigurationC10maxBitRateSivp">maxBitRate</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -223,14 +223,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Max video bit rate (kbps)</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">timeout</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">maxBitRate</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -240,9 +240,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7MuxLive0aB5ErrorO4codeSivp"></a>
-                    <a name="//apple_ref/swift/Property/code" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7MuxLive0aB5ErrorO4codeSivp">code</a>
+                    <a name="/s:7MuxLive0aB18VideoConfigurationC10minBitRateSivp"></a>
+                    <a name="//apple_ref/swift/Property/minBitRate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7MuxLive0aB18VideoConfigurationC10minBitRateSivp">minBitRate</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -250,14 +250,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Min video bit rate (kbps)</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">code</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">minBitRate</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -267,9 +267,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:s23CustomStringConvertibleP11descriptionSSvp"></a>
-                    <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
-                    <a class="token" href="#/s:s23CustomStringConvertibleP11descriptionSSvp">description</a>
+                    <a name="/s:7MuxLive0aB18VideoConfigurationC10dimensionsSC6CGSizeVSgvp"></a>
+                    <a name="//apple_ref/swift/Property/dimensions" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7MuxLive0aB18VideoConfigurationC10dimensionsSC6CGSizeVSgvp">dimensions</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -277,13 +277,41 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Dimensions for video output, AV dictionary keys AVVideoWidthKey, AVVideoHeightKey</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">dimensions</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7MuxLive0aB18VideoConfigurationC19maxKeyFrameIntervalSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/maxKeyFrameInterval" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7MuxLive0aB18VideoConfigurationC19maxKeyFrameIntervalSiSgvp">maxKeyFrameInterval</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Maximum interval between key frames, 1 meaning key frames only, AV dictionary key AVVideoMaxKeyFrameIntervalKey</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">maxKeyFrameInterval</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>

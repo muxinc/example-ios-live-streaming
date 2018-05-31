@@ -71,4 +71,5 @@ public class MuxLiveVideoConfiguration: MuxLiveConfiguration {
     
     /// Maximum interval between key frames, 1 meaning key frames only, AV dictionary key AVVideoMaxKeyFrameIntervalKey
     public var maxKeyFrameInterval: Int?
+    
 }

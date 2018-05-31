@@ -214,6 +214,8 @@ extension MuxLive {
         if let maxKeyFrameInterval = self.videoConfiguration.maxKeyFrameInterval {
             videoConfiguration?.videoMaxKeyframeInterval = UInt(maxKeyFrameInterval)
         }
+        
+        // Could be configured to use LFCaptureSessionPreset540x960
         videoConfiguration?.sessionPreset = .captureSessionPreset720x1280
         
         self._liveSession = LFLiveSession(audioConfiguration: audioConfiguration, videoConfiguration: videoConfiguration)!
