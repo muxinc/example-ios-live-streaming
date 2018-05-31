@@ -197,10 +197,13 @@ extension MuxLive {
         if let channelsCount = self.audioConfiguration.channelsCount {
             audioConfiguration?.numberOfChannels = UInt(channelsCount)
         }
-        //audioConfiguration?.audioBitrate = self.audioConfiguration.bitRate
-        //audioConfiguration?.sampleRate =
+        audioConfiguration?.audioBitrate = self.lfLiveKitAudioBitRate(withBitRate: self.audioConfiguration.bitRate)
+        audioConfiguration?.audioSampleRate = self.lfLiveKitAudioSampleRate(withSampleRate: self.audioConfiguration.sampleRate)
         
         let videoConfiguration = LFLiveVideoConfiguration.defaultConfiguration(for: .medium3)
+        if let dimensions = self.videoConfiguration.dimensions {
+            videoConfiguration?.videoSize = dimensions
+        }
         //videoConfiguration?
         //videoConfiguration?
         //videoConfiguration?
@@ -216,6 +219,45 @@ extension MuxLive {
         }
     }
 
+}
+
+// MARK: - internal LFLiveKit wrappers
+
+extension MuxLive {
+    
+    // audio type wrappers
+    
+    internal func lfLiveKitAudioBitRate(withBitRate bitRate: Int) -> LFLiveAudioBitRate {
+        var lfBitRate = LFLiveAudioBitRate._Default
+        if bitRate <= 32000 {
+            lfBitRate = LFLiveAudioBitRate._32Kbps
+        } else if bitRate <= 64000 {
+            lfBitRate = LFLiveAudioBitRate._64Kbps
+        } else if bitRate <= 96000 {
+            lfBitRate = LFLiveAudioBitRate._96Kbps
+        } else if bitRate <= 128000 {
+            lfBitRate = LFLiveAudioBitRate._128Kbps
+        }
+        return lfBitRate
+    }
+    
+    internal func lfLiveKitAudioSampleRate(withSampleRate sampleRate: Float64) -> LFLiveAudioSampleRate {
+        var lfSampleRate = LFLiveAudioSampleRate._Default
+        if sampleRate <= 16000 {
+            lfSampleRate = LFLiveAudioSampleRate._16000Hz
+        } else if sampleRate <= 44100 {
+            lfSampleRate = LFLiveAudioSampleRate._44100Hz
+        } else if sampleRate <= 48000 {
+            lfSampleRate = LFLiveAudioSampleRate._48000Hz
+        }
+        return lfSampleRate
+    }
+    
+    // video type wrappers
+    
+    internal func lfLiveKitVideoBitRate() {
+    }
+    
 }
 
 // MARK: - actions
