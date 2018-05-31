@@ -6,6 +6,24 @@ An example app for live streaming from an iOS device using the [Mux](http://mux.
 
 ## Quick Start
 
+### Sample Project Setup
+
+The sample project uses [CocoaPods](https://guides.cocoapods.org/using/getting-started.html) a dependency manager for iOS.
+
+After cloning this project and installing [CocoaPods](https://guides.cocoapods.org/using/getting-started.html), run the following command to get setup:
+
+```sh
+make setup && make pods
+```
+
+Then just open the workspace to then build and run.
+
+```sh
+open *workspace
+```
+
+### Integration
+
 You can follow along with the code from the sample project's 'ViewController.swift' or install all the source files in the following ways:
 
 ```ruby
