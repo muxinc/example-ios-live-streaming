@@ -194,7 +194,9 @@ extension MuxLive {
     
     internal func setupLiveSession() {
         let audioConfiguration = LFLiveAudioConfiguration.default()
-        //audioConfiguration?.numberOfChannels = self.audioConfiguration.channelsCount
+        if let channelsCount = self.audioConfiguration.channelsCount {
+            audioConfiguration?.numberOfChannels = UInt(channelsCount)
+        }
         //audioConfiguration?.audioBitrate = self.audioConfiguration.bitRate
         //audioConfiguration?.sampleRate =
         

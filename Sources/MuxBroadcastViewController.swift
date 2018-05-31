@@ -136,6 +136,11 @@ extension MuxBroadcastViewController {
         self._muxLive.start(withStreamKey: streamKey)
     }
     
+    /// Stop a MuxLive stream
+    public func stop() {
+        self._muxLive.stop()
+    }
+    
 }
 
 // MARK: - permissions
