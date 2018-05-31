@@ -4,27 +4,37 @@ An example app for live streaming from an iOS device using the [Mux](http://mux.
 
 [![Swift Version](https://img.shields.io/badge/language-swift%204.0-brightgreen.svg)](https://developer.apple.com/swift) [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/muxinc/example-ios-live-streaming/blob/master/LICENSE)
 
+## Welcome
+
+Our sample app uses a couple open source projects and Xcode configurations in order to get live streaming up and running quickly. To make this easy, we recommend using the [CocoaPods](http://cocoapods.org) dependency manager for iOS. Once you have cloned this repo and installed CocoaPods, you are a couple steps away from streaming.
+
 ## Quick Start
 
 ### Sample Project Setup
 
-The sample project uses [CocoaPods](https://guides.cocoapods.org/using/getting-started.html) a dependency manager for iOS.
-
-After cloning this project and installing [CocoaPods](https://guides.cocoapods.org/using/getting-started.html), run the following command to get setup:
+After cloning this project and installing [CocoaPods](https://guides.cocoapods.org/using/getting-started.html), run the following command from the project directory to get setup:
 
 ```sh
 make setup && make pods
 ```
 
-Then just open the workspace to then build and run.
+Then just open the workspace and click play to build and run.
 
 ```sh
 open *workspace
 ```
 
+### Components
+
+- `MuxLive.swift` is a component that provides the basic network streaming capabilities and properties for configuration.
+
+- `MuxLiveConfiguration.swift` describes `MuxLive.swift`'s configuration properties.
+
+- `MuxBroadcastViewController.swift` provides a simple camera user interface and wraps `MuxLive.swift`, providing examples on how to use `MuxLive.swift` directly (if that is preferred).
+
 ### Integration
 
-You can follow along with the code from the sample project's 'ViewController.swift' or install all the source files in the following ways:
+If you'd like to integrate these components into your app directly (instead of using them as a reference), you can follow along with the code from the sample project's 'ViewController.swift' and install all the source files in the following ways:
 
 ```ruby
 
@@ -46,7 +56,7 @@ let package = Package(
 
 ```
 
-Alternatively, copy the [source files](https://github.com/muxinc/example-ios-live-streaming/tree/master/Sources) into your Xcode project.
+Alternatively, you can just copy all the [source files](https://github.com/muxinc/example-ios-live-streaming/tree/master/Sources) into your Xcode project.
 
 ## Documentation
 
