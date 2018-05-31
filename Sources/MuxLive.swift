@@ -24,6 +24,7 @@
 //
 
 import Foundation
+import AVFoundation
 import Alamofire
 import LFLiveKit
 
@@ -204,9 +205,16 @@ extension MuxLive {
         if let dimensions = self.videoConfiguration.dimensions {
             videoConfiguration?.videoSize = dimensions
         }
-        //videoConfiguration?
-        //videoConfiguration?
-        //videoConfiguration?
+        videoConfiguration?.videoFrameRate = UInt(self.videoConfiguration.frameRate)
+        videoConfiguration?.videoMaxFrameRate = UInt(self.videoConfiguration.maxFrameRate)
+        videoConfiguration?.videoMinFrameRate = UInt(self.videoConfiguration.minFrameRate)
+        videoConfiguration?.videoBitRate = UInt(self.videoConfiguration.bitRate)
+        videoConfiguration?.videoMaxBitRate = UInt(self.videoConfiguration.maxBitRate)
+        videoConfiguration?.videoMinBitRate = UInt(self.videoConfiguration.minBitRate)
+        if let maxKeyFrameInterval = self.videoConfiguration.maxKeyFrameInterval {
+            videoConfiguration?.videoMaxKeyframeInterval = UInt(maxKeyFrameInterval)
+        }
+        videoConfiguration?.sessionPreset = .captureSessionPreset720x1280
         
         self._liveSession = LFLiveSession(audioConfiguration: audioConfiguration, videoConfiguration: videoConfiguration)!
         if let liveSession = self._liveSession {
@@ -251,11 +259,6 @@ extension MuxLive {
             lfSampleRate = LFLiveAudioSampleRate._48000Hz
         }
         return lfSampleRate
-    }
-    
-    // video type wrappers
-    
-    internal func lfLiveKitVideoBitRate() {
     }
     
 }

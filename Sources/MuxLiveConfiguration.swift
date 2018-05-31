@@ -52,27 +52,23 @@ public class MuxLiveVideoConfiguration: MuxLiveConfiguration {
     public var frameRate: CMTimeScale = 30
     
     /// Max video frame rate
-    public var maxFrameRate: CMTimeScale?
+    public var maxFrameRate: CMTimeScale = 30
 
     /// Min video frame rate
-    public var minFrameRate: CMTimeScale?
+    public var minFrameRate: CMTimeScale = 15
     
     /// Video bit rate (kbps)
     public var bitRate: Int = 5500000
 
     /// Max video bit rate (kbps)
-    public var maxBitRate: Int?
+    public var maxBitRate: Int = 6000000
     
     /// Min video bit rate (kbps)
-    public var minBitRate: Int?
+    public var minBitRate: Int = 5000000
     
     /// Dimensions for video output, AV dictionary keys AVVideoWidthKey, AVVideoHeightKey
     public var dimensions: CGSize?
     
     /// Maximum interval between key frames, 1 meaning key frames only, AV dictionary key AVVideoMaxKeyFrameIntervalKey
     public var maxKeyFrameInterval: Int?
-
-    /// AVFoundation configuration preset, see AVCaptureSession.h
-    public var preset: AVCaptureSession.Preset?
-    
 }
