@@ -89,8 +89,7 @@ public class ViewController: UIViewController {
         }
         
         self._stopButton = UIButton(type: .custom)
-        if let stopButton = self._stopButton,
-           let streamStatusProgress = self._streamStatusProgress {
+        if let stopButton = self._stopButton {
             stopButton.setImage(UIImage(named: "close_button"), for: .normal)
             stopButton.sizeToFit()
             stopButton.addTarget(self, action: #selector(handleStopButton(_:)), for: .touchUpInside)

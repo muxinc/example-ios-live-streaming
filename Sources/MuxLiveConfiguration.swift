@@ -35,7 +35,7 @@ public class MuxLiveConfiguration {
 public class MuxLiveAudioConfiguration: MuxLiveConfiguration {
     
     /// Audio bit rate (kbps), AV dictionary key AVEncoderBitRateKey
-    public var bitRate: Int = 128000
+    public var bitRate: Int = 96000
     
     /// Sample rate in hertz, AV dictionary key AVSampleRateKey
     public var sampleRate: Float64 = 44100
@@ -58,13 +58,13 @@ public class MuxLiveVideoConfiguration: MuxLiveConfiguration {
     public var minFrameRate: CMTimeScale = 15
     
     /// Video bit rate (kbps)
-    public var bitRate: Int = 5500000
+    public var bitRate: Int = 800000
 
     /// Max video bit rate (kbps)
-    public var maxBitRate: Int = 6000000
+    public var maxBitRate: Int = 960000
     
     /// Min video bit rate (kbps)
-    public var minBitRate: Int = 5000000
+    public var minBitRate: Int = 600000
     
     /// Dimensions for video output, AV dictionary keys AVVideoWidthKey, AVVideoHeightKey
     public var dimensions: CGSize?
