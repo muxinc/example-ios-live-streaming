@@ -129,7 +129,7 @@
     {
       "file": "/Users/piemonte/Source/example-ios-live-streaming/Sources/MuxLive.swift",
       "line": 43,
-      "symbol": "MuxLiveState.refreshing",
+      "symbol": "MuxLiveState.retrying",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
