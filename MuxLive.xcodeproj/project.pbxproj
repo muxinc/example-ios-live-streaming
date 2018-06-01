@@ -1,0 +1,584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0625D02520BF1B06009B4A48 /* MuxLiveConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625D02420BF1B06009B4A48 /* MuxLiveConfiguration.swift */; };
+		0625D02620BF1B06009B4A48 /* MuxLiveConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625D02420BF1B06009B4A48 /* MuxLiveConfiguration.swift */; };
+		064DCF5120C054DD000960C5 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064DCF5020C054DC000960C5 /* ConnectViewController.swift */; };
+		066A170E1E6F7CE600514A95 /* MuxLive.h in Headers */ = {isa = PBXBuildFile; fileRef = 066A170C1E6F7CE600514A95 /* MuxLive.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		066A17121E6F7CEA00514A95 /* MuxLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE65B61E19009000C064DE /* MuxLive.swift */; };
+		06AC206720A1006F00D37921 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06AC206620A1006F00D37921 /* LaunchScreen.storyboard */; };
+		06AE759B20BDD1C2004F0BCF /* MuxLive-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 06AE759A20BDD1C1004F0BCF /* MuxLive-Bridging-Header.h */; };
+		06BF168320BDEE0900044640 /* MuxBroadcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BF168220BDEE0900044640 /* MuxBroadcastViewController.swift */; };
+		06BF168420BDEE1000044640 /* MuxBroadcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BF168220BDEE0900044640 /* MuxBroadcastViewController.swift */; };
+		06BF168820BE1F7700044640 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06BF168720BE1F7700044640 /* Images.xcassets */; };
+		06DE65A41E18E3BE00C064DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE65A31E18E3BE00C064DE /* AppDelegate.swift */; };
+		06DE65A61E18E3BE00C064DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE65A51E18E3BE00C064DE /* ViewController.swift */; };
+		06DE65B71E19009000C064DE /* MuxLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE65B61E19009000C064DE /* MuxLive.swift */; };
+		B50B0BBB46543953A826D6E2 /* Pods_MuxLive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9897D9DB3CE3061D6362E86E /* Pods_MuxLive.framework */; };
+		DEF3563702B7A1BFDA9A055B /* Pods_SampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90767989B457F323107B1589 /* Pods_SampleApp.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0625D02420BF1B06009B4A48 /* MuxLiveConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MuxLiveConfiguration.swift; path = Sources/MuxLiveConfiguration.swift; sourceTree = "<group>"; };
+		064DCF5020C054DC000960C5 /* ConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectViewController.swift; path = App/ConnectViewController.swift; sourceTree = "<group>"; };
+		066A170A1E6F7CE600514A95 /* MuxLive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MuxLive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		066A170C1E6F7CE600514A95 /* MuxLive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MuxLive.h; path = Sources/MuxLive.h; sourceTree = "<group>"; };
+		066A170D1E6F7CE600514A95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Framework/Info.plist; sourceTree = "<group>"; };
+		06AC206620A1006F00D37921 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = App/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		06AE759A20BDD1C1004F0BCF /* MuxLive-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MuxLive-Bridging-Header.h"; path = "Sources/MuxLive-Bridging-Header.h"; sourceTree = "<group>"; };
+		06BF168220BDEE0900044640 /* MuxBroadcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MuxBroadcastViewController.swift; path = Sources/MuxBroadcastViewController.swift; sourceTree = "<group>"; };
+		06BF168720BE1F7700044640 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		06DE65A01E18E3BE00C064DE /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		06DE65A31E18E3BE00C064DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = App/AppDelegate.swift; sourceTree = "<group>"; };
+		06DE65A51E18E3BE00C064DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = App/ViewController.swift; sourceTree = "<group>"; };
+		06DE65AF1E18E3BE00C064DE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = App/Info.plist; sourceTree = "<group>"; };
+		06DE65B61E19009000C064DE /* MuxLive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MuxLive.swift; path = Sources/MuxLive.swift; sourceTree = "<group>"; };
+		06FA57781E1A2AC6001E66A5 /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
+		06FA57791E1A2AC6001E66A5 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		06FA577A1E1A2AC6001E66A5 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		33CBFA2F010E0AF3F9265D6C /* Pods-MuxLive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuxLive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MuxLive/Pods-MuxLive.debug.xcconfig"; sourceTree = "<group>"; };
+		6F5D8F317DF3DA494E63BD1D /* Pods-SampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleApp/Pods-SampleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		90767989B457F323107B1589 /* Pods_SampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9897D9DB3CE3061D6362E86E /* Pods_MuxLive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuxLive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2BCD02FF389AA69907F61EA /* Pods-MuxLive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuxLive.release.xcconfig"; path = "Pods/Target Support Files/Pods-MuxLive/Pods-MuxLive.release.xcconfig"; sourceTree = "<group>"; };
+		C4B5F9CF558369D5590A8C92 /* Pods-SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SampleApp/Pods-SampleApp.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		066A17061E6F7CE600514A95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B50B0BBB46543953A826D6E2 /* Pods_MuxLive.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06DE659D1E18E3BE00C064DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEF3563702B7A1BFDA9A055B /* Pods_SampleApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06BF9FAD2078A03900B8895D /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				066A170C1E6F7CE600514A95 /* MuxLive.h */,
+				06AE759A20BDD1C1004F0BCF /* MuxLive-Bridging-Header.h */,
+				066A170D1E6F7CE600514A95 /* Info.plist */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		06BF9FB02078A0C800B8895D /* MuxLive */ = {
+			isa = PBXGroup;
+			children = (
+				06BF168220BDEE0900044640 /* MuxBroadcastViewController.swift */,
+				06DE65B61E19009000C064DE /* MuxLive.swift */,
+				0625D02420BF1B06009B4A48 /* MuxLiveConfiguration.swift */,
+			);
+			name = MuxLive;
+			sourceTree = "<group>";
+		};
+		06DE65971E18E3BE00C064DE = {
+			isa = PBXGroup;
+			children = (
+				06DE65B81E19009B00C064DE /* App */,
+				06BF9FAD2078A03900B8895D /* Framework */,
+				06BF9FB02078A0C800B8895D /* MuxLive */,
+				06DE65B51E18FF2D00C064DE /* Supporting Files */,
+				06DE65A11E18E3BE00C064DE /* Products */,
+				534FEF23053723F0E1BF66C2 /* Pods */,
+				8A5CC98E88F923A95371E120 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		06DE65A11E18E3BE00C064DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				06DE65A01E18E3BE00C064DE /* SampleApp.app */,
+				066A170A1E6F7CE600514A95 /* MuxLive.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		06DE65B51E18FF2D00C064DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				06FA57781E1A2AC6001E66A5 /* Base.xcconfig */,
+				06FA57791E1A2AC6001E66A5 /* Debug.xcconfig */,
+				06FA577A1E1A2AC6001E66A5 /* Release.xcconfig */,
+				06BF168720BE1F7700044640 /* Images.xcassets */,
+				06AC206620A1006F00D37921 /* LaunchScreen.storyboard */,
+			);
+			name = "Supporting Files";
+			path = App;
+			sourceTree = "<group>";
+		};
+		06DE65B81E19009B00C064DE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				06DE65A31E18E3BE00C064DE /* AppDelegate.swift */,
+				064DCF5020C054DC000960C5 /* ConnectViewController.swift */,
+				06DE65A51E18E3BE00C064DE /* ViewController.swift */,
+				06DE65AF1E18E3BE00C064DE /* Info.plist */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		534FEF23053723F0E1BF66C2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				33CBFA2F010E0AF3F9265D6C /* Pods-MuxLive.debug.xcconfig */,
+				A2BCD02FF389AA69907F61EA /* Pods-MuxLive.release.xcconfig */,
+				6F5D8F317DF3DA494E63BD1D /* Pods-SampleApp.debug.xcconfig */,
+				C4B5F9CF558369D5590A8C92 /* Pods-SampleApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8A5CC98E88F923A95371E120 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9897D9DB3CE3061D6362E86E /* Pods_MuxLive.framework */,
+				90767989B457F323107B1589 /* Pods_SampleApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		066A17071E6F7CE600514A95 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06AE759B20BDD1C2004F0BCF /* MuxLive-Bridging-Header.h in Headers */,
+				066A170E1E6F7CE600514A95 /* MuxLive.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		066A17091E6F7CE600514A95 /* MuxLive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 066A170F1E6F7CE600514A95 /* Build configuration list for PBXNativeTarget "MuxLive" */;
+			buildPhases = (
+				52EA4AF1D6B803B33917B3E6 /* [CP] Check Pods Manifest.lock */,
+				066A17051E6F7CE600514A95 /* Sources */,
+				066A17061E6F7CE600514A95 /* Frameworks */,
+				066A17071E6F7CE600514A95 /* Headers */,
+				066A17081E6F7CE600514A95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MuxLive;
+			productName = Connect;
+			productReference = 066A170A1E6F7CE600514A95 /* MuxLive.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		06DE659F1E18E3BE00C064DE /* SampleApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06DE65B21E18E3BE00C064DE /* Build configuration list for PBXNativeTarget "SampleApp" */;
+			buildPhases = (
+				6C7384EB81F7FCC80DEF6D61 /* [CP] Check Pods Manifest.lock */,
+				06DE659C1E18E3BE00C064DE /* Sources */,
+				06DE659D1E18E3BE00C064DE /* Frameworks */,
+				06DE659E1E18E3BE00C064DE /* Resources */,
+				9D8217CFF194E90201EEA488 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SampleApp;
+			productName = Connect;
+			productReference = 06DE65A01E18E3BE00C064DE /* SampleApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		06DE65981E18E3BE00C064DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Mux, Inc.";
+				TargetAttributes = {
+					066A17091E6F7CE600514A95 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = WPFGSL5BLN;
+						ProvisioningStyle = Automatic;
+					};
+					06DE659F1E18E3BE00C064DE = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = WPFGSL5BLN;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 06DE659B1E18E3BE00C064DE /* Build configuration list for PBXProject "MuxLive" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 06DE65971E18E3BE00C064DE;
+			productRefGroup = 06DE65A11E18E3BE00C064DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				06DE659F1E18E3BE00C064DE /* SampleApp */,
+				066A17091E6F7CE600514A95 /* MuxLive */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		066A17081E6F7CE600514A95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06DE659E1E18E3BE00C064DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06BF168820BE1F7700044640 /* Images.xcassets in Resources */,
+				06AC206720A1006F00D37921 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		52EA4AF1D6B803B33917B3E6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MuxLive-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C7384EB81F7FCC80DEF6D61 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SampleApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D8217CFF194E90201EEA488 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SampleApp/Pods-SampleApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/LFLiveKit/LFLiveKit.framework",
+				"${BUILT_PRODUCTS_DIR}/NextLevel/NextLevel.framework",
+				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
+				"${BUILT_PRODUCTS_DIR}/RPCircularProgress/RPCircularProgress.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LFLiveKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextLevel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RPCircularProgress.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SampleApp/Pods-SampleApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		066A17051E6F7CE600514A95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				066A17121E6F7CEA00514A95 /* MuxLive.swift in Sources */,
+				06BF168320BDEE0900044640 /* MuxBroadcastViewController.swift in Sources */,
+				0625D02620BF1B06009B4A48 /* MuxLiveConfiguration.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06DE659C1E18E3BE00C064DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				064DCF5120C054DD000960C5 /* ConnectViewController.swift in Sources */,
+				06DE65A61E18E3BE00C064DE /* ViewController.swift in Sources */,
+				0625D02520BF1B06009B4A48 /* MuxLiveConfiguration.swift in Sources */,
+				06DE65A41E18E3BE00C064DE /* AppDelegate.swift in Sources */,
+				06DE65B71E19009000C064DE /* MuxLive.swift in Sources */,
+				06BF168420BDEE1000044640 /* MuxBroadcastViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		066A17101E6F7CE600514A95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33CBFA2F010E0AF3F9265D6C /* Pods-MuxLive.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = WPFGSL5BLN;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Framework/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mux.MuxLive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/MuxLive-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		066A17111E6F7CE600514A95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2BCD02FF389AA69907F61EA /* Pods-MuxLive.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = WPFGSL5BLN;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Framework/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mux.MuxLive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/MuxLive-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		06DE65B01E18E3BE00C064DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		06DE65B11E18E3BE00C064DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		06DE65B31E18E3BE00C064DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F5D8F317DF3DA494E63BD1D /* Pods-SampleApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "$(SRCROOT)/App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mux.SampleApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		06DE65B41E18E3BE00C064DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4B5F9CF558369D5590A8C92 /* Pods-SampleApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "$(SRCROOT)/App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mux.SampleApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		066A170F1E6F7CE600514A95 /* Build configuration list for PBXNativeTarget "MuxLive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				066A17101E6F7CE600514A95 /* Debug */,
+				066A17111E6F7CE600514A95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06DE659B1E18E3BE00C064DE /* Build configuration list for PBXProject "MuxLive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06DE65B01E18E3BE00C064DE /* Debug */,
+				06DE65B11E18E3BE00C064DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06DE65B21E18E3BE00C064DE /* Build configuration list for PBXNativeTarget "SampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06DE65B31E18E3BE00C064DE /* Debug */,
+				06DE65B41E18E3BE00C064DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 06DE65981E18E3BE00C064DE /* Project object */;
+}
