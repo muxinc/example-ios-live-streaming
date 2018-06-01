@@ -40,7 +40,7 @@ public enum MuxLiveState: Int, CustomStringConvertible {
     case started
     case stopped
     case failed
-    case refreshing
+    case retrying
     
     public var description: String {
         get {
@@ -55,8 +55,8 @@ public enum MuxLiveState: Int, CustomStringConvertible {
                 return "Stopped"
             case .failed:
                 return "Failed"
-            case .refreshing:
-                return "Refreshing"
+            case .retrying:
+                return "Retrying"
             }
         }
     }
