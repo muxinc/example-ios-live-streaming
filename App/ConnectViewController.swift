@@ -40,7 +40,7 @@ public class ConnectViewController: UIViewController {
     
     internal var _logoView: UIImageView?
     internal var _textField: UITextField?
-    internal var _startButton: UIButton?
+    internal var _startButton: MuxButton?
     
     // MARK: - object lifecycle
     
@@ -88,7 +88,7 @@ public class ConnectViewController: UIViewController {
 
         }
         
-        self._startButton = UIButton(type: .custom)
+        self._startButton = MuxButton(type: .custom)
         if let startButton = self._startButton,
             let textField = self._textField {
             startButton.frame = CGRect(x: 0, y: 0, width: self.view.bounds.size.width - (20 * 2), height: 50)
@@ -167,4 +167,14 @@ extension ConnectViewController: UITextFieldDelegate {
         return true
     }
     
+}
+
+public class MuxButton: UIButton {
+
+    override open var isHighlighted: Bool {
+        didSet {
+            backgroundColor = isHighlighted ? UIColor(hex: "#fb2490").alpha(0.7) : UIColor(hex: "#fb2490")
+        }
+    }
+
 }
