@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
   s.swift_version = '4.0'
   s.dependency 'Alamofire', '~> 4.7'
   s.dependency 'LFLiveKit', '~> 2.6'
-  s.dependency 'NextLevel', '~> 9.3'
+  s.dependency 'NextLevel', '~> 0.9'
 end
