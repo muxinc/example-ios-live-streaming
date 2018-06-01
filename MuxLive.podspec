@@ -3,8 +3,8 @@ Pod::Spec.new do |s|
   s.version  = '0.0.1'
   s.license  = 'MIT'
   s.summary  = 'MuxLive SDK'
-  s.authors  = { "Mux, Inc." => "support@mux.com" }
-  s.homepage = 'https://github.com/muxinc/example'
+  s.authors  = { "Mux, Inc." => "info@mux.com" }
+  s.homepage = 'http://mux.com'
   s.source   = { :git => 'https://github.com/muxinc/example-ios-live-streaming.git', :tag => s.version }
   s.ios.deployment_target = '11.0'
   s.source_files = 'Sources/*.swift'

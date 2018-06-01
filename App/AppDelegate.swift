@@ -39,8 +39,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let viewController = ViewController()
         self.window?.rootViewController = viewController
         self.window?.makeKeyAndVisible()
-        
-        viewController.presentConnectModal(animated: false)
+
+        DispatchQueue.main.async {
+            viewController.presentConnectModal(animated: true)
+        }
         
         return true
     }
