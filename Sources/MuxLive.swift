@@ -216,7 +216,7 @@ extension MuxLive {
         }
         
         // Could be configured to use LFCaptureSessionPreset540x960
-        videoConfiguration?.sessionPreset = .captureSessionPreset720x1280
+        videoConfiguration?.sessionPreset = .captureSessionPreset540x960
         
         self._liveSession = LFLiveSession(audioConfiguration: audioConfiguration, videoConfiguration: videoConfiguration)!
         if let liveSession = self._liveSession {
