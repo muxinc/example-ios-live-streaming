@@ -22,7 +22,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 //
-
+import UIKit
 import Foundation
 import AVFoundation
 import CoreGraphics
@@ -71,5 +71,7 @@ public class MuxLiveVideoConfiguration: MuxLiveConfiguration {
     
     /// Maximum interval between key frames, 1 meaning key frames only, AV dictionary key AVVideoMaxKeyFrameIntervalKey
     public var maxKeyFrameInterval: Int?
+
+    public var outputImageOrientation: UIInterfaceOrientation = .portrait
     
 }

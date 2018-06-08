@@ -10,7 +10,6 @@ use_frameworks!
 
 def shared_pods
   pod 'Alamofire', '~> 4.7'
-  pod 'LFLiveKit', '~> 2.6'
   pod 'NextLevel', '~> 0.9'
 end
 
