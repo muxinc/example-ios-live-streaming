@@ -20,9 +20,25 @@
 		06DE65A41E18E3BE00C064DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE65A31E18E3BE00C064DE /* AppDelegate.swift */; };
 		06DE65A61E18E3BE00C064DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE65A51E18E3BE00C064DE /* ViewController.swift */; };
 		06DE65B71E19009000C064DE /* MuxLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE65B61E19009000C064DE /* MuxLive.swift */; };
+		73752C4A20CAE2E300627B22 /* LFLiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737525BD20CADDB000627B22 /* LFLiveKit.framework */; };
+		73752C4B20CAE2E300627B22 /* LFLiveKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 737525BD20CADDB000627B22 /* LFLiveKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B50B0BBB46543953A826D6E2 /* Pods_MuxLive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9897D9DB3CE3061D6362E86E /* Pods_MuxLive.framework */; };
 		DEF3563702B7A1BFDA9A055B /* Pods_SampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90767989B457F323107B1589 /* Pods_SampleApp.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		73752C4C20CAE2E300627B22 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				73752C4B20CAE2E300627B22 /* LFLiveKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0625D02420BF1B06009B4A48 /* MuxLiveConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MuxLiveConfiguration.swift; path = Sources/MuxLiveConfiguration.swift; sourceTree = "<group>"; };
@@ -44,6 +60,7 @@
 		06FA577A1E1A2AC6001E66A5 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		33CBFA2F010E0AF3F9265D6C /* Pods-MuxLive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuxLive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MuxLive/Pods-MuxLive.debug.xcconfig"; sourceTree = "<group>"; };
 		6F5D8F317DF3DA494E63BD1D /* Pods-SampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleApp/Pods-SampleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		737525BD20CADDB000627B22 /* LFLiveKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LFLiveKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90767989B457F323107B1589 /* Pods_SampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9897D9DB3CE3061D6362E86E /* Pods_MuxLive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuxLive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2BCD02FF389AA69907F61EA /* Pods-MuxLive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuxLive.release.xcconfig"; path = "Pods/Target Support Files/Pods-MuxLive/Pods-MuxLive.release.xcconfig"; sourceTree = "<group>"; };
@@ -64,6 +81,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEF3563702B7A1BFDA9A055B /* Pods_SampleApp.framework in Frameworks */,
+				73752C4A20CAE2E300627B22 /* LFLiveKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +168,7 @@
 		8A5CC98E88F923A95371E120 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				737525BD20CADDB000627B22 /* LFLiveKit.framework */,
 				9897D9DB3CE3061D6362E86E /* Pods_MuxLive.framework */,
 				90767989B457F323107B1589 /* Pods_SampleApp.framework */,
 			);
@@ -199,6 +218,7 @@
 				06DE659D1E18E3BE00C064DE /* Frameworks */,
 				06DE659E1E18E3BE00C064DE /* Resources */,
 				9D8217CFF194E90201EEA488 /* [CP] Embed Pods Frameworks */,
+				73752C4C20CAE2E300627B22 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -226,7 +246,7 @@
 					};
 					06DE659F1E18E3BE00C064DE = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = WPFGSL5BLN;
+						DevelopmentTeam = XX95P4Y787;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -315,7 +335,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SampleApp/Pods-SampleApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/LFLiveKit/LFLiveKit.framework",
 				"${BUILT_PRODUCTS_DIR}/NextLevel/NextLevel.framework",
 				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
 				"${BUILT_PRODUCTS_DIR}/RPCircularProgress/RPCircularProgress.framework",
@@ -323,7 +342,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LFLiveKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextLevel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RPCircularProgress.framework",
@@ -525,6 +543,7 @@
 			baseConfigurationReference = 6F5D8F317DF3DA494E63BD1D /* Pods-SampleApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XX95P4Y787;
 				INFOPLIST_FILE = "$(SRCROOT)/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mux.SampleApp;
@@ -539,6 +558,7 @@
 			baseConfigurationReference = C4B5F9CF558369D5590A8C92 /* Pods-SampleApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XX95P4Y787;
 				INFOPLIST_FILE = "$(SRCROOT)/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mux.SampleApp;
