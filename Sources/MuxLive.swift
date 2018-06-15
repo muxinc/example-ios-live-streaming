@@ -193,7 +193,7 @@ public class MuxLive: NSObject {
 
 extension MuxLive {
     
-    internal func setupLiveSession() {
+    internal func setupLiveSession(_ orientation: UIInterfaceOrientation) {
         let audioConfiguration = LFLiveAudioConfiguration.default()
         if let channelsCount = self.audioConfiguration.channelsCount {
             audioConfiguration?.numberOfChannels = UInt(channelsCount)
@@ -201,7 +201,7 @@ extension MuxLive {
         audioConfiguration?.audioBitrate = self.lfLiveKitAudioBitRate(withBitRate: self.audioConfiguration.bitRate)
         audioConfiguration?.audioSampleRate = self.lfLiveKitAudioSampleRate(withSampleRate: self.audioConfiguration.sampleRate)
         
-        let videoConfiguration = LFLiveVideoConfiguration.defaultConfiguration(for: .medium3)
+        let videoConfiguration = LFLiveVideoConfiguration.defaultConfiguration(for: .medium3, outputImageOrientation: orientation)
         if let dimensions = self.videoConfiguration.dimensions {
             videoConfiguration?.videoSize = dimensions
         }
@@ -214,10 +214,7 @@ extension MuxLive {
         if let maxKeyFrameInterval = self.videoConfiguration.maxKeyFrameInterval {
             videoConfiguration?.videoMaxKeyframeInterval = UInt(maxKeyFrameInterval)
         }
-        
-        // Could be configured to use LFCaptureSessionPreset540x960
-        videoConfiguration?.sessionPreset = .captureSessionPreset540x960
-        
+
         self._liveSession = LFLiveSession(audioConfiguration: audioConfiguration, videoConfiguration: videoConfiguration)!
         if let liveSession = self._liveSession {
             liveSession.delegate = self
@@ -270,8 +267,8 @@ extension MuxLive {
 extension MuxLive {
     
     /// Start broadcast
-    public func start(withStreamKey streamKey: String) {
-        self.setupLiveSession()
+    public func start(withStreamKey streamKey: String, _ orientation: UIInterfaceOrientation) {
+        self.setupLiveSession(orientation)
 
         // Check that the stream key is actually a key and not a full address
         var streamUrlString = MuxLiveRtmpProductionUrl + streamKey
