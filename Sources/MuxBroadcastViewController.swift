@@ -65,7 +65,7 @@ public class MuxBroadcastViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.view.backgroundColor = UIColor.black
         self.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
@@ -81,10 +81,25 @@ public class MuxBroadcastViewController: UIViewController {
         self.checkAndRequestCameraPermission()
         self.checkAndRequestMicrophonePermission()
     }
-    
+
+    private func getInterfaceOrientationMask() -> UIInterfaceOrientationMask {
+        switch self.interfaceOrientation {
+        case .unknown:
+            return .portrait
+        case .portraitUpsideDown:
+            return .portraitUpsideDown
+        case .landscapeLeft:
+            return .landscapeLeft
+        case .landscapeRight:
+            return .landscapeRight
+        case .portrait:
+            return .portrait
+        }
+    }
+
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         self._muxLive.isRunning = true
     }
     
@@ -133,11 +148,19 @@ extension MuxBroadcastViewController {
     ///
     /// - Parameter streamKey: stream_key from api.mux.com
     public func start(withStreamKey streamKey: String) {
-        self._muxLive.start(withStreamKey: streamKey)
+        if let delegate = UIApplication.shared.delegate as? AppDelegate {
+            delegate.orientationLock = getInterfaceOrientationMask()
+        }
+
+        self._muxLive.start(withStreamKey: streamKey, self.interfaceOrientation)
     }
     
     /// Stop a MuxLive stream
     public func stop() {
+        if let delegate = UIApplication.shared.delegate as? AppDelegate {
+            delegate.orientationLock = .all
+        }
+
         self._muxLive.stop()
     }
     
