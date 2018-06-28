@@ -31,7 +31,7 @@ import LFLiveKit
 // MARK: - types
 
 public let MuxLiveApiProductionHostname = "api.mux.com"
-public let MuxLiveRtmpProductionUrl = "rtmp://live.mux.com/mux/"
+public let MuxLiveRtmpProductionUrl = "rtmp://live.mux.com/app/"
 
 /// Stream state
 public enum MuxLiveState: Int, CustomStringConvertible {
@@ -41,7 +41,7 @@ public enum MuxLiveState: Int, CustomStringConvertible {
     case stopped
     case failed
     case retrying
-    
+
     public var description: String {
         get {
             switch self {
@@ -72,7 +72,7 @@ public enum MuxLiveError: Error, CustomStringConvertible {
     case connectionFailure
     case verificationFailure
     case timeout
-    
+
     public var code: Int {
         get {
             switch self {
@@ -89,7 +89,7 @@ public enum MuxLiveError: Error, CustomStringConvertible {
             }
         }
     }
-    
+
     public var description: String {
         get {
             switch self {
@@ -120,13 +120,13 @@ public protocol MuxLiveDelegate: NSObjectProtocol {
 public class MuxLive: NSObject {
 
     // MARK: - properties
-    
+
     /// Delegate properties
     public weak var muxLiveDelegate: MuxLiveDelegate?
-    
+
     /// Audio configuration
     public var audioConfiguration: MuxLiveAudioConfiguration = MuxLiveAudioConfiguration()
-    
+
     /// Video configuration
     public var videoConfiguration: MuxLiveVideoConfiguration = MuxLiveVideoConfiguration()
 
@@ -136,7 +136,7 @@ public class MuxLive: NSObject {
             return self._reachabilityStatus != .notReachable
         }
     }
-    
+
     /// Preview of stream, provide a view for rendering
     public var previewView: UIView? {
         didSet {
@@ -152,7 +152,7 @@ public class MuxLive: NSObject {
             self._liveSession?.running = self.isRunning
         }
     }
-    
+
     /// Stream state
     public var liveState: MuxLiveState {
         get {
@@ -163,36 +163,36 @@ public class MuxLive: NSObject {
             }
         }
     }
-    
+
     // MARK: - ivars
 
     internal var _reachabilityManager: NetworkReachabilityManager?
     internal var _reachabilityStatus: NetworkReachabilityManager.NetworkReachabilityStatus = .unknown
-    
+
     internal var _configuration: URLSessionConfiguration?
-    
+
     internal var _clientSession: SessionManager? // mux api (future)
     internal var _liveSession: LFLiveSession?    // mux stream
-    
+
     // MARK: - singleton
-    
+
     /// Singleton (if desired)
     public static let shared = MuxLive()
-    
+
     // MARK: - Object lifecycle
-    
+
     /// Initializer
     public override init() {
         self._reachabilityManager = NetworkReachabilityManager(host: MuxLiveApiProductionHostname)
         super.init()
     }
-    
+
 }
 
 // MARK: - internal setup
 
 extension MuxLive {
-    
+
     internal func setupLiveSession() {
         let audioConfiguration = LFLiveAudioConfiguration.default()
         if let channelsCount = self.audioConfiguration.channelsCount {
@@ -200,7 +200,7 @@ extension MuxLive {
         }
         audioConfiguration?.audioBitrate = self.lfLiveKitAudioBitRate(withBitRate: self.audioConfiguration.bitRate)
         audioConfiguration?.audioSampleRate = self.lfLiveKitAudioSampleRate(withSampleRate: self.audioConfiguration.sampleRate)
-        
+
         let videoConfiguration = LFLiveVideoConfiguration.defaultConfiguration(for: .medium3)
         if let dimensions = self.videoConfiguration.dimensions {
             videoConfiguration?.videoSize = dimensions
@@ -214,15 +214,15 @@ extension MuxLive {
         if let maxKeyFrameInterval = self.videoConfiguration.maxKeyFrameInterval {
             videoConfiguration?.videoMaxKeyframeInterval = UInt(maxKeyFrameInterval)
         }
-        
+
         // Could be configured to use LFCaptureSessionPreset540x960
         videoConfiguration?.sessionPreset = .captureSessionPreset540x960
-        
+
         self._liveSession = LFLiveSession(audioConfiguration: audioConfiguration, videoConfiguration: videoConfiguration)!
         if let liveSession = self._liveSession {
             liveSession.delegate = self
             liveSession.captureDevicePosition = .back
-            
+
             if let previewView = self.previewView {
                 liveSession.preView = previewView
             }
@@ -234,9 +234,9 @@ extension MuxLive {
 // MARK: - internal LFLiveKit wrappers
 
 extension MuxLive {
-    
+
     // audio type wrappers
-    
+
     internal func lfLiveKitAudioBitRate(withBitRate bitRate: Int) -> LFLiveAudioBitRate {
         var lfBitRate = LFLiveAudioBitRate._Default
         if bitRate <= 32000 {
@@ -250,7 +250,7 @@ extension MuxLive {
         }
         return lfBitRate
     }
-    
+
     internal func lfLiveKitAudioSampleRate(withSampleRate sampleRate: Float64) -> LFLiveAudioSampleRate {
         var lfSampleRate = LFLiveAudioSampleRate._Default
         if sampleRate <= 16000 {
@@ -262,13 +262,13 @@ extension MuxLive {
         }
         return lfSampleRate
     }
-    
+
 }
 
 // MARK: - actions
 
 extension MuxLive {
-    
+
     /// Start broadcast
     public func start(withStreamKey streamKey: String) {
         self.setupLiveSession()
@@ -278,34 +278,34 @@ extension MuxLive {
         if streamKey.range(of: "rtmp://") != nil {
             streamUrlString = streamKey
         }
-        
+
         let streamInfo = LFLiveStreamInfo()
         streamInfo.url = streamUrlString
         self._liveSession?.startLive(streamInfo)
     }
-    
+
     /// Stop broadcast
     public func stop() {
         self._liveSession?.stopLive()
         self._liveSession?.delegate = nil
         self._liveSession = nil
     }
-    
+
 }
 
 // MARK: - LFLiveSessionDelegate
 
 extension MuxLive: LFLiveSessionDelegate {
-    
+
     public func liveSession(_ session: LFLiveSession?, debugInfo: LFLiveDebug?) {
         // print("🎬 debugInfo: \(debugInfo?.currentBandwidth)")
     }
-    
+
     public func liveSession(_ session: LFLiveSession?, liveStateDidChange state: LFLiveState) {
         let state = MuxLiveState(rawValue: Int(state.rawValue)) ?? .ready
         self.muxLiveDelegate?.muxLive(self, didChangeState: state)
     }
-    
+
     public func liveSession(_ session: LFLiveSession?, errorCode: LFLiveSocketErrorCode) {
         var muxLiveError = MuxLiveError.unknown
         switch errorCode {
