@@ -31,7 +31,7 @@ import LFLiveKit
 // MARK: - types
 
 public let MuxLiveApiProductionHostname = "api.mux.com"
-public let MuxLiveRtmpProductionUrl = "rtmp://live.mux.com/mux/"
+public let MuxLiveRtmpProductionUrl = "rtmp://live.mux.com/app/"
 
 /// Stream state
 public enum MuxLiveState: Int, CustomStringConvertible {
