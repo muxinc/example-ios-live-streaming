@@ -19,7 +19,7 @@ target 'MuxLive' do
 end
 
 target 'SampleApp' do
-  pod 'RPCircularProgress', '~> 0.4'
+  pod 'RPCircularProgress', '0.4.0'
   pod 'Hue', '~> 3.0'
   shared_pods
 end
