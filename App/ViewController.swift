@@ -190,7 +190,7 @@ extension ViewController: ConnectDelegate {
     
     public func connectViewController(_ viewController: ConnectViewController, didConnectWithStreamKey streamKey: String) {
         // start a broadcast stream
-        self._broadcastViewController?.start(withStreamKey: streamKey)
+        self._broadcastViewController?.start(withStreamKey: streamKey, interfaceOrientation: UIApplication.shared.statusBarOrientation)
     }
     
 }

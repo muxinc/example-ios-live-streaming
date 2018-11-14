@@ -147,20 +147,12 @@ extension MuxBroadcastViewController {
     /// Start a MuxLive stream
     ///
     /// - Parameter streamKey: stream_key from api.mux.com
-    public func start(withStreamKey streamKey: String) {
-        if let delegate = UIApplication.shared.delegate as? AppDelegate {
-            delegate.orientationLock = getInterfaceOrientationMask()
-        }
-
-        self._muxLive.start(withStreamKey: streamKey, self.interfaceOrientation)
+    public func start(withStreamKey streamKey: String, interfaceOrientation: UIInterfaceOrientation) {
+        self._muxLive.start(withStreamKey: streamKey, interfaceOrientation)
     }
     
     /// Stop a MuxLive stream
     public func stop() {
-        if let delegate = UIApplication.shared.delegate as? AppDelegate {
-            delegate.orientationLock = .all
-        }
-
         self._muxLive.stop()
     }
     
