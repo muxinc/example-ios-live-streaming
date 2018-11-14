@@ -29,7 +29,7 @@ import AVFoundation
 import NextLevel
 
 /// MuxBroadcasterDelegate, callback delegation for the broadcaster
-public protocol MuxBroadcasterDelegate: NSObjectProtocol {
+public protocol MuxBroadcasterDelegate: AnyObject {
     func muxBroadcaster(_ muxBroadcaster: MuxBroadcastViewController, didChangeState state: MuxLiveState)
 }
 

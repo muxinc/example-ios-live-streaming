@@ -111,7 +111,7 @@ public enum MuxLiveError: Error, CustomStringConvertible {
 // MARK: - MuxLive
 
 /// MuxLiveDelegate protocol, callback for receiving updates from MuxLive
-public protocol MuxLiveDelegate: NSObjectProtocol {
+public protocol MuxLiveDelegate: AnyObject {
     func muxLive(_ muxLive: MuxLive, didChangeState state: MuxLiveState)
     func muxLive(_ muxLive: MuxLive, didFailWithError error: Error)
 }
