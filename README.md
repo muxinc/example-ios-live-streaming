@@ -65,7 +65,7 @@ You can find [the docs here](https://muxinc.github.io/example-ios-live-streaming
 ## Resources
 
 * [Mux](http://mux.com)
-* [Mux Live Streaming Documentation](https://docs.mux.com/v1-beta/docs/live-streaming)
+* [Mux Live Streaming Documentation](https://docs.mux.com/docs/live-streaming)
 * [Demuxed](http://demuxed.com)
 * [Swift Evolution](https://github.com/apple/swift-evolution)
 * [NextLevel](http://nextlevel.engineering/) Media Capture Library
