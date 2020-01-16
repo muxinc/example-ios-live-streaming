@@ -1,8 +1,8 @@
 PODS:
-  - Alamofire (4.7.3)
+  - Alamofire (4.9.1)
   - Hue (3.0.1)
   - LFLiveKit (2.6)
-  - NextLevel (0.12.1)
+  - NextLevel (0.16.0)
   - RPCircularProgress (0.4.0)
 
 DEPENDENCIES:
@@ -13,7 +13,7 @@ DEPENDENCIES:
   - RPCircularProgress (= 0.4.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - Hue
     - LFLiveKit
@@ -21,12 +21,12 @@ SPEC REPOS:
     - RPCircularProgress
 
 SPEC CHECKSUMS:
-  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Hue: 93e852fa6211ab35922ad8c293f51c43d6c79eb2
   LFLiveKit: 2219563721f8aa0f188effc3395a06e2d53b23f2
-  NextLevel: 10e20ee383eb461c3c250300583f0f234adc194e
+  NextLevel: 160b90a86bb36b6fda7c03b8f238a923df880ce5
   RPCircularProgress: fdbf7c5b54156980cdd35c6cc8a87d6468c6c829
 
 PODFILE CHECKSUM: 5a9254f5d14321a55508e1b5d51cbc855d7346d9
 
-COCOAPODS: 1.6.0.beta.2
+COCOAPODS: 1.8.4
