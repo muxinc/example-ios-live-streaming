@@ -166,13 +166,13 @@ public class MuxLive: NSObject {
     
     // MARK: - ivars
 
-    internal var _reachabilityManager: NetworkReachabilityManager?
-    internal var _reachabilityStatus: NetworkReachabilityManager.NetworkReachabilityStatus = .unknown
+    private var _reachabilityManager: NetworkReachabilityManager?
+    private var _reachabilityStatus: NetworkReachabilityManager.NetworkReachabilityStatus = .unknown
     
-    internal var _configuration: URLSessionConfiguration?
+    private var _configuration: URLSessionConfiguration?
     
-    internal var _clientSession: SessionManager? // mux api (future)
-    internal var _liveSession: LFLiveSession?    // mux stream
+    private var _clientSession: SessionManager? // mux api (future)
+    private var _liveSession: LFLiveSession?    // mux stream
     
     // MARK: - singleton
     

@@ -32,12 +32,10 @@ public class ViewController: UIViewController {
 
     // MARK: - properties
     
-    // MARK: - ivars
+    private var _broadcastViewController: MuxBroadcastViewController?
     
-    internal var _broadcastViewController: MuxBroadcastViewController?
-    
-    internal var _stopButton: UIButton?
-    internal var _streamStatusProgress: RPCircularProgress?
+    private var _stopButton: UIButton?
+    private var _streamStatusProgress: RPCircularProgress?
         
     // MARK: - object lifecycle
     
