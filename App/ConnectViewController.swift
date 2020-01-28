@@ -39,6 +39,7 @@ public class ConnectViewController: UIViewController {
     private var _logoView: UIImageView?
     private var _textField: UITextField?
     private var _startButton: MuxButton?
+    private var _textBox: UITextView?
     
     // MARK: - object lifecycle
     
@@ -100,6 +101,11 @@ public class ConnectViewController: UIViewController {
             self.view.addSubview(startButton)
         }
         
+        self._textBox = UITextView(frame: CGRect(x: 20, y: self.view.bounds.size.height - 60, width: self.view.bounds.size.width - 40, height: 100))
+        if let textBox = self._textBox {
+            textBox.text = "Note: streaming from a simulator will not work because the simulator does not have access to a camera."
+            self.view.addSubview(textBox)
+        }
     }
     
     public override func viewWillDisappear(_ animated: Bool) {
