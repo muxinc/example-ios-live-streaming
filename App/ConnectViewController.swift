@@ -36,11 +36,9 @@ public class ConnectViewController: UIViewController {
     
     public weak var connectDelegate: ConnectDelegate?
     
-    // MARK: - ivars
-    
-    internal var _logoView: UIImageView?
-    internal var _textField: UITextField?
-    internal var _startButton: MuxButton?
+    private var _logoView: UIImageView?
+    private var _textField: UITextField?
+    private var _startButton: MuxButton?
     
     // MARK: - object lifecycle
     
@@ -106,7 +104,7 @@ public class ConnectViewController: UIViewController {
     
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.view.endEditing(true)
+        _textField?.resignFirstResponder()
     }
 }
 
@@ -162,7 +160,7 @@ extension ConnectViewController: UITextFieldDelegate {
     }
     
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
+        textField.resignFirstResponder()
         self.startStream()
         return true
     }
