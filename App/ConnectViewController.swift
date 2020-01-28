@@ -82,7 +82,7 @@ public class ConnectViewController: UIViewController {
             textField.tintColor = UIColor(hex: "#fb3064")
             textField.textColor = UIColor.black
             textField.background = UIImage(named: "textfield_inactive")
-            textField.attributedPlaceholder = NSAttributedString(string: "stream key or URL", attributes: [NSAttributedStringKey.foregroundColor : UIColor.darkGray])
+            textField.attributedPlaceholder = NSAttributedString(string: "stream key or URL", attributes: [NSAttributedString.Key.foregroundColor : UIColor.darkGray])
             textField.center = CGPoint(x: self.view.bounds.midX, y: logoView.frame.maxY + 45.0 + 20.0)
             self.view.addSubview(textField)
 

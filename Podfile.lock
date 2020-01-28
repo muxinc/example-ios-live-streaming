@@ -13,7 +13,7 @@ DEPENDENCIES:
   - RPCircularProgress (= 0.4.0)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - Alamofire
     - Hue
     - LFLiveKit
@@ -27,6 +27,6 @@ SPEC CHECKSUMS:
   NextLevel: 160b90a86bb36b6fda7c03b8f238a923df880ce5
   RPCircularProgress: fdbf7c5b54156980cdd35c6cc8a87d6468c6c829
 
-PODFILE CHECKSUM: 5a9254f5d14321a55508e1b5d51cbc855d7346d9
+PODFILE CHECKSUM: d74eb7b6384b7c5c5741dc684400434c43590465
 
 COCOAPODS: 1.8.4

@@ -62,9 +62,9 @@ public class ViewController: UIViewController {
         if let viewController = self._broadcastViewController {
             viewController.muxBroadcasterDelegate = self
             
-            self.addChildViewController(viewController)
+            self.addChild(viewController)
             self.view.addSubview(viewController.view)
-            viewController.didMove(toParentViewController: self)
+            viewController.didMove(toParent: self)
         }
         
         var safeAreaTop: CGFloat = UIApplication.shared.statusBarFrame.size.height
