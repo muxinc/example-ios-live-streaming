@@ -173,7 +173,7 @@ extension MuxBroadcastViewController {
         
         let okAction = UIAlertAction(title: NSLocalizedString("open", comment: "open"), style: UIAlertAction.Style.default) {
             (action: UIAlertAction) in
-            print("debug - open the settings page");
+            print("UIAlertAction open completion handler");
         }
         let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: "cancel"), style: UIAlertAction.Style.cancel, handler: nil)
         alert.addAction(okAction)
@@ -191,7 +191,7 @@ extension MuxBroadcastViewController {
                                    message: NSLocalizedString("would you like to open settings?", comment: "would you like to open settings?"))
         } else {
             NextLevel.requestAuthorization(forMediaType: AVMediaType.video, completionHandler: { (AVMediaType, NextLevelAuthorizationStatus) in
-              print("debug requestAuthorization video")
+              print("NextLevel.requestAuthorization video completion handler")
             })
         }
     }
@@ -205,7 +205,7 @@ extension MuxBroadcastViewController {
                                    message: NSLocalizedString("would you like to open settings?", comment: "would you like to open settings?"))
         } else {
             NextLevel.requestAuthorization(forMediaType: AVMediaType.audio, completionHandler: { (AVMediaType, NextLevelAuthorizationStatus) in
-              print("debug requestAuthorization audio")
+              print("NextLevel.requestAuthorization audio completion handler")
             })
         }
     }
