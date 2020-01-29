@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "06DE659F1E18E3BE00C064DE"
-               BuildableName = "SampleApp.app"
-               BlueprintName = "SampleApp"
+               BuildableName = "MuxLive.app"
+               BlueprintName = "MuxLive"
                ReferencedContainer = "container:MuxLive.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -27,19 +27,17 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <Testables>
-      </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "06DE659F1E18E3BE00C064DE"
-            BuildableName = "SampleApp.app"
-            BlueprintName = "SampleApp"
+            BuildableName = "MuxLive.app"
+            BlueprintName = "MuxLive"
             ReferencedContainer = "container:MuxLive.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
+      <Testables>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -56,13 +54,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "06DE659F1E18E3BE00C064DE"
-            BuildableName = "SampleApp.app"
-            BlueprintName = "SampleApp"
+            BuildableName = "MuxLive.app"
+            BlueprintName = "MuxLive"
             ReferencedContainer = "container:MuxLive.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Debug"
@@ -74,8 +70,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "06DE659F1E18E3BE00C064DE"
-            BuildableName = "SampleApp.app"
-            BlueprintName = "SampleApp"
+            BuildableName = "MuxLive.app"
+            BlueprintName = "MuxLive"
             ReferencedContainer = "container:MuxLive.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

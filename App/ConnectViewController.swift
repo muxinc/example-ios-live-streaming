@@ -36,11 +36,10 @@ public class ConnectViewController: UIViewController {
     
     public weak var connectDelegate: ConnectDelegate?
     
-    // MARK: - ivars
-    
-    internal var _logoView: UIImageView?
-    internal var _textField: UITextField?
-    internal var _startButton: MuxButton?
+    private var _logoView: UIImageView?
+    private var _textField: UITextField?
+    private var _startButton: MuxButton?
+    private var _textBox: UITextView?
     
     // MARK: - object lifecycle
     
@@ -82,7 +81,7 @@ public class ConnectViewController: UIViewController {
             textField.tintColor = UIColor(hex: "#fb3064")
             textField.textColor = UIColor.black
             textField.background = UIImage(named: "textfield_inactive")
-            textField.attributedPlaceholder = NSAttributedString(string: "stream key or URL", attributes: [NSAttributedStringKey.foregroundColor : UIColor.darkGray])
+            textField.attributedPlaceholder = NSAttributedString(string: "stream key or URL", attributes: [NSAttributedString.Key.foregroundColor : UIColor.darkGray])
             textField.center = CGPoint(x: self.view.bounds.midX, y: logoView.frame.maxY + 45.0 + 20.0)
             self.view.addSubview(textField)
 
@@ -102,11 +101,16 @@ public class ConnectViewController: UIViewController {
             self.view.addSubview(startButton)
         }
         
+        self._textBox = UITextView(frame: CGRect(x: 20, y: self.view.bounds.size.height - 60, width: self.view.bounds.size.width - 40, height: 100))
+        if let textBox = self._textBox {
+            textBox.text = "Note: streaming from a simulator will not work because the simulator does not have access to a camera."
+            self.view.addSubview(textBox)
+        }
     }
     
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.view.endEditing(true)
+        _textField?.resignFirstResponder()
     }
 }
 
@@ -162,7 +166,7 @@ extension ConnectViewController: UITextFieldDelegate {
     }
     
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
+        textField.resignFirstResponder()
         self.startStream()
         return true
     }

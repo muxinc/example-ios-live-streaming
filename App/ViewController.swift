@@ -32,12 +32,10 @@ public class ViewController: UIViewController {
 
     // MARK: - properties
     
-    // MARK: - ivars
+    private var _broadcastViewController: MuxBroadcastViewController?
     
-    internal var _broadcastViewController: MuxBroadcastViewController?
-    
-    internal var _stopButton: UIButton?
-    internal var _streamStatusProgress: RPCircularProgress?
+    private var _stopButton: UIButton?
+    private var _streamStatusProgress: RPCircularProgress?
         
     // MARK: - object lifecycle
     
@@ -62,9 +60,9 @@ public class ViewController: UIViewController {
         if let viewController = self._broadcastViewController {
             viewController.muxBroadcasterDelegate = self
             
-            self.addChildViewController(viewController)
+            self.addChild(viewController)
             self.view.addSubview(viewController.view)
-            viewController.didMove(toParentViewController: self)
+            viewController.didMove(toParent: self)
         }
         
         var safeAreaTop: CGFloat = UIApplication.shared.statusBarFrame.size.height

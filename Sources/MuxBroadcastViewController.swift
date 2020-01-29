@@ -169,15 +169,13 @@ extension MuxBroadcastViewController {
     ///   - message: Alert message
     open func launchAppSettings(withTitle title: String = NSLocalizedString("⚙️ settings", comment: "⚙️ settings"),
                                   message: String = NSLocalizedString("would you like to open settings?", comment: "would you like to open settings?")) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         
-        let okAction = UIAlertAction(title: NSLocalizedString("open", comment: "open"), style: UIAlertActionStyle.default) {
+        let okAction = UIAlertAction(title: NSLocalizedString("open", comment: "open"), style: UIAlertAction.Style.default) {
             (action: UIAlertAction) in
-            if let settingsURL = URL(string: UIApplicationOpenSettingsURLString) {
-                UIApplication.shared.open(settingsURL)
-            }
+            print("UIAlertAction open completion handler");
         }
-        let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: "cancel"), style: UIAlertActionStyle.cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: "cancel"), style: UIAlertAction.Style.cancel, handler: nil)
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         
@@ -186,25 +184,29 @@ extension MuxBroadcastViewController {
     
     /// Check and request camera permission
     open func checkAndRequestCameraPermission() {
-        let status = NextLevel.shared.authorizationStatus(forMediaType: AVMediaType.video)
+        let status = NextLevel.authorizationStatus(forMediaType: AVMediaType.video)
         if status == .notAuthorized {
             // looks like they previously denied access, prompt to open settings
             self.launchAppSettings(withTitle: NSLocalizedString("📸 camera access denied", comment: "📸 camera access denied"),
                                    message: NSLocalizedString("would you like to open settings?", comment: "would you like to open settings?"))
         } else {
-            NextLevel.shared.requestAuthorization(forMediaType: AVMediaType.video)
+            NextLevel.requestAuthorization(forMediaType: AVMediaType.video, completionHandler: { (AVMediaType, NextLevelAuthorizationStatus) in
+              print("NextLevel.requestAuthorization video completion handler")
+            })
         }
     }
     
     /// Check and request mic permission
     open func checkAndRequestMicrophonePermission() {
-        let status = NextLevel.shared.authorizationStatus(forMediaType: AVMediaType.audio)
+        let status = NextLevel.authorizationStatus(forMediaType: AVMediaType.audio)
         if status == .notAuthorized {
             // looks like they previously denied access, prompt to open settings
             self.launchAppSettings(withTitle: NSLocalizedString("🎙 mic access denied", comment: "🎙 mic access denied"),
                                    message: NSLocalizedString("would you like to open settings?", comment: "would you like to open settings?"))
         } else {
-            NextLevel.shared.requestAuthorization(forMediaType: AVMediaType.audio)
+            NextLevel.requestAuthorization(forMediaType: AVMediaType.audio, completionHandler: { (AVMediaType, NextLevelAuthorizationStatus) in
+              print("NextLevel.requestAuthorization audio completion handler")
+            })
         }
     }
     
